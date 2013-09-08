@@ -2,18 +2,16 @@
 //  AppDelegate.h
 //  MOPCON
 //
-//  Created by Evan Wu on 13/7/16.
-//  Copyright (c) 2013年 Evan Wu. All rights reserved.
+//  Created by Inflames on 13/9/8.
+//  Copyright (c) 2013年 Inflames. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end
