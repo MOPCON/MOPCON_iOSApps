@@ -1,5 +1,5 @@
 //
-//  Utility.h
+//  Session.h
 //  MOPCON
 //
 //  Created by Evan Wu on 13/9/9.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utility : NSObject
+@interface Session : NSObject
 
-+ (NSArray *)sessionParser:(NSDictionary *)dictionary;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSMutableArray *trackArray;
 
 @end

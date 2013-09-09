@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234A817DDCFD900EDC65D /* SessionDay.m */; };
+		20A234AC17DDD0E000EDC65D /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AB17DDD0E000EDC65D /* Session.m */; };
+		20A234AF17DDD1C200EDC65D /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AE17DDD1C200EDC65D /* Track.m */; };
 		20A8424E17DD9E4A00F0C49F /* ViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A8424D17DD9E4A00F0C49F /* ViewController568.xib */; };
 		20A8425617DDA78700F0C49F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8425517DDA78700F0C49F /* Utility.m */; };
 		B17348B617DCCA29009EF3F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B517DCCA29009EF3F1 /* UIKit.framework */; };
@@ -42,6 +45,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20A234A717DDCFD900EDC65D /* SessionDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDay.h; sourceTree = "<group>"; };
+		20A234A817DDCFD900EDC65D /* SessionDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDay.m; sourceTree = "<group>"; };
+		20A234AA17DDD0E000EDC65D /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		20A234AB17DDD0E000EDC65D /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		20A234AD17DDD1C200EDC65D /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
+		20A234AE17DDD1C200EDC65D /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		20A8424D17DD9E4A00F0C49F /* ViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController568.xib; sourceTree = "<group>"; };
 		20A8425417DDA78700F0C49F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		20A8425517DDA78700F0C49F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
@@ -110,6 +119,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20A234A617DDCFB800EDC65D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20A234A717DDCFD900EDC65D /* SessionDay.h */,
+				20A234A817DDCFD900EDC65D /* SessionDay.m */,
+				20A234AA17DDD0E000EDC65D /* Session.h */,
+				20A234AB17DDD0E000EDC65D /* Session.m */,
+				20A234AD17DDD1C200EDC65D /* Track.h */,
+				20A234AE17DDD1C200EDC65D /* Track.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		20A8424F17DD9F9100F0C49F /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +198,7 @@
 		B17348E917DCCAF6009EF3F1 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				20A234A617DDCFB800EDC65D /* Model */,
 				20A8424F17DD9F9100F0C49F /* View */,
 				B17348EA17DCCAF6009EF3F1 /* Controller */,
 				B17348EE17DCCAF6009EF3F1 /* Utility */,
@@ -292,7 +315,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = Inflames;
+				ORGANIZATIONNAME = MOPCON;
 			};
 			buildConfigurationList = B17348AD17DCCA29009EF3F1 /* Build configuration list for PBXProject "MOPCON" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -355,6 +378,9 @@
 				B1D19B8417DCCD400072F1A8 /* CJSONScanner.m in Sources */,
 				B1D19B8517DCCD400072F1A8 /* CJSONSerializer.m in Sources */,
 				20A8425617DDA78700F0C49F /* Utility.m in Sources */,
+				20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */,
+				20A234AC17DDD0E000EDC65D /* Session.m in Sources */,
+				20A234AF17DDD1C200EDC65D /* Track.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

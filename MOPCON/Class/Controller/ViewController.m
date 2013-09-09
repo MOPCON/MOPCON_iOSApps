@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "URLConnection.h"
 #import "CJSONDeserializer.h"
+#import "Utility.h"
 
 @interface ViewController ()
 
@@ -53,6 +54,8 @@
       NSString *s = (NSString *)[d objectForKey:@"id"];
       NSLog(@"%@", s);
     }
+    
+    [Utility sessionParser:aJsonDict];
   } errorBlock:^(NSError *error) {}];
 }
 
