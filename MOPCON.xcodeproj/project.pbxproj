@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20A8424E17DD9E4A00F0C49F /* ViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A8424D17DD9E4A00F0C49F /* ViewController568.xib */; };
+		20A8425617DDA78700F0C49F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8425517DDA78700F0C49F /* Utility.m */; };
 		B17348B617DCCA29009EF3F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B517DCCA29009EF3F1 /* UIKit.framework */; };
 		B17348B817DCCA29009EF3F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B717DCCA29009EF3F1 /* Foundation.framework */; };
 		B17348BA17DCCA29009EF3F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B917DCCA29009EF3F1 /* CoreGraphics.framework */; };
@@ -40,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20A8424D17DD9E4A00F0C49F /* ViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController568.xib; sourceTree = "<group>"; };
+		20A8425417DDA78700F0C49F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		20A8425517DDA78700F0C49F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		B17348B217DCCA29009EF3F1 /* MOPCON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOPCON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17348B517DCCA29009EF3F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B17348B717DCCA29009EF3F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -105,6 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20A8424F17DD9F9100F0C49F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B17348A917DCCA29009EF3F1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +176,7 @@
 		B17348E917DCCAF6009EF3F1 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				20A8424F17DD9F9100F0C49F /* View */,
 				B17348EA17DCCAF6009EF3F1 /* Controller */,
 				B17348EE17DCCAF6009EF3F1 /* Utility */,
 			);
@@ -177,6 +190,7 @@
 				B17348EB17DCCAF6009EF3F1 /* ViewController.h */,
 				B17348EC17DCCAF6009EF3F1 /* ViewController.m */,
 				B17348ED17DCCAF6009EF3F1 /* ViewController.xib */,
+				20A8424D17DD9E4A00F0C49F /* ViewController568.xib */,
 				B1D19B5917DCCC300072F1A8 /* NewsViewController.h */,
 				B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */,
 				B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */,
@@ -193,6 +207,8 @@
 				B1D19B6317DCCD400072F1A8 /* TouchJSON */,
 				B17348EF17DCCAF6009EF3F1 /* URLConnection.h */,
 				B17348F017DCCAF6009EF3F1 /* URLConnection.m */,
+				20A8425417DDA78700F0C49F /* Utility.h */,
+				20A8425517DDA78700F0C49F /* Utility.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -311,6 +327,7 @@
 				B17348F217DCCAF6009EF3F1 /* ViewController.xib in Resources */,
 				B1D19B5D17DCCC300072F1A8 /* NewsViewController.xib in Resources */,
 				B1D19B6217DCCC4B0072F1A8 /* MapViewController.xib in Resources */,
+				20A8424E17DD9E4A00F0C49F /* ViewController568.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +354,7 @@
 				B1D19B8317DCCD400072F1A8 /* CJSONDeserializer.m in Sources */,
 				B1D19B8417DCCD400072F1A8 /* CJSONScanner.m in Sources */,
 				B1D19B8517DCCD400072F1A8 /* CJSONSerializer.m in Sources */,
+				20A8425617DDA78700F0C49F /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

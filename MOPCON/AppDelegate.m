@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  MOPCON
 //
-//  Created by Inflames on 13/9/8.
-//  Copyright (c) 2013年 Inflames. All rights reserved.
+//  Created by Evan Wu on 13/7/16.
+//  Copyright (c) 2013年 MOPCON. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -16,9 +16,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
-  UIViewController  *viewController1 = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-  UIViewController  *viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
-  UIViewController  *viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+  UIViewController  *viewController1;// = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+  UIViewController  *viewController2;// = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  UIViewController  *viewController3;// = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+  
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    viewController1 = [[ViewController alloc] initWithNibName:@"ViewController568" bundle:nil];
+    viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController568" bundle:nil];
+    viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController568" bundle:nil];
+  } else {
+    viewController1 = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+    viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+  }
+  
   self.tabBarController = [[UITabBarController alloc] init];
   self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3];
   self.window.rootViewController = self.tabBarController;
