@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
 #import "ViewController.h"
+#import "NewsViewController.h"
+#import "MapViewController.h"
 
 @implementation AppDelegate
 
@@ -16,11 +17,14 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
   UIViewController  *viewController1 = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-  UIViewController  *viewController2 = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+  UIViewController  *viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
+  UIViewController  *viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
   self.tabBarController = [[UITabBarController alloc] init];
-  self.tabBarController.viewControllers = @[viewController1, viewController2];
+  self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3];
   self.window.rootViewController = self.tabBarController;
+  [self.tabBarController.tabBar setTintColor:[UIColor lightGrayColor]];
   [self.window makeKeyAndVisible];
+
   return YES;
 }
 

@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "URLConnection.h"
+#import "CJSONDeserializer.h"
 
 @interface ViewController ()
 
@@ -27,7 +29,22 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
+  NSURL               *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mopcon.org/2013/api/session.php"]];
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+
+  [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"ResponseBody=%@", jsonString);
+
+    NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+    NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
+    NSLog(@"%@", lastupdate);
+
+    NSString *documentPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    [jsondata writeToFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt", lastupdate]] atomically:YES];
+  } errorBlock:^(NSError *error) {}];
 }
 
 - (void)didReceiveMemoryWarning {
