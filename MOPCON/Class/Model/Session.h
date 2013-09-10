@@ -11,6 +11,6 @@
 @interface Session : NSObject
 
 @property (nonatomic, strong) NSDate *time;
-@property (nonatomic, strong) NSMutableDictionary *trackArray;
+@property (nonatomic, strong) NSMutableDictionary *trackDictionary;
 
 @end

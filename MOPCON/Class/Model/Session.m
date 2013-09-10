@@ -14,7 +14,7 @@
   self = [super init];
   
   if (self) {
-    [self setTrackArray:[[NSMutableDictionary alloc] initWithCapacity:3]];
+    [self setTrackDictionary:[[NSMutableDictionary alloc] initWithCapacity:3]];
   }
   
   return self;

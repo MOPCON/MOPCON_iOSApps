@@ -46,17 +46,31 @@
     NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     [jsondata writeToFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt", lastupdate]] atomically:YES];
     
-    [self setSessionArray:(NSArray *)[aJsonDict objectForKey:@"sessions"]];
+    
+    [self setSessionArray:[Utility sessionParser:aJsonDict]];
     NSLog(@"%@, \r\nsession count = %d", self.sessionArray, self.sessionArray.count);
     
     for (int i = 0; i < self.sessionArray.count; i++) {
-      NSDictionary *d = (NSDictionary *)[self.sessionArray objectAtIndex:i];
-      NSString *s = (NSString *)[d objectForKey:@"id"];
-      NSLog(@"%@", s);
+      SessionDay *d = [self.sessionArray objectAtIndex:i];
+      for (NSString *key in d.sessionDictionary) {
+        Session *s = [d.sessionDictionary objectForKey:key];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
+        NSLog(@"%@", [dateFormatter stringFromDate:s.time]);
+        for (NSString *k in s.trackDictionary) {
+          Track *tt = [s.trackDictionary objectForKey:k];
+          NSLog(@"%@", tt.name);
+          NSLog(@"%@", tt.speaker);
+          NSLog(@"%@", tt.speaker_bio);
+          NSLog(@"%@", tt.loc);
+        }
+      }
     }
     
-    NSArray *array = [Utility sessionParser:aJsonDict];
-    NSLog(@"%@", array);
+    
+    self.sessionDay = [self.sessionArray objectAtIndex:0];
+    [self.tableView reloadData];
+    
   } errorBlock:^(NSError *error) {}];
 }
 
@@ -68,11 +82,34 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 0;
+  return (self.sessionDay) ? 4 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return 0;
+  if (!self.sessionDay) {
+    return 0;
+  }
+  
+  NSString *sessionId;
+  switch (section) {
+    case 0:
+      sessionId = Session0;
+      break;
+    case 1:
+      sessionId = Session1;
+      break;
+    case 2:
+      sessionId = Session2;
+      break;
+    case 3:
+      sessionId = Session3;
+      break;
+    default:
+      break;
+  }
+
+  Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
+  return session.trackDictionary.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,7 +118,7 @@
   if (cell == nil) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  
+  [cell.textLabel setText:[NSString stringWithFormat:@"%d", indexPath.row]];
   return cell;
 }
 
@@ -96,4 +133,21 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
 }
+
+#pragma mark - Action
+
+- (IBAction)preDay:(id)sender {
+  self.dayenum = ConfDayOne;
+  if (self.sessionArray.count == 2) {
+    self.sessionDay = [self.sessionArray objectAtIndex:0];
+  }
+}
+
+- (IBAction)nextDay:(id)sender {
+  self.dayenum = ConfDayTwo;
+  if (self.sessionArray.count == 2) {
+    self.sessionDay = [self.sessionArray objectAtIndex:1];
+  }
+}
+
 @end

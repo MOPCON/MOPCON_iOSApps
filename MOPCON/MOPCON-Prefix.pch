@@ -12,3 +12,12 @@
   #import <UIKit/UIKit.h>
   #import <Foundation/Foundation.h>
 #endif
+
+#define Session0 @"Session0"
+#define Session1 @"Session1"
+#define Session2 @"Session2"
+#define Session3 @"Session3"
+
+#define Track0   @"Track0"
+#define Track1   @"Track1"
+#define Track1   @"Track2"

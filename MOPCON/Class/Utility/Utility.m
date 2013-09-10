@@ -49,16 +49,16 @@
       case 1: {
         switch (sessionId) {
           case 0:
-            session = [sessionDayOne.sessionDictionary objectForKey:@"Session1"];
+            session = [sessionDayOne.sessionDictionary objectForKey:Session0];
             break;
           case 1:
-            session = [sessionDayOne.sessionDictionary objectForKey:@"Session2"];
+            session = [sessionDayOne.sessionDictionary objectForKey:Session1];
             break;
           case 2:
-            session = [sessionDayOne.sessionDictionary objectForKey:@"Session3"];
+            session = [sessionDayOne.sessionDictionary objectForKey:Session2];
             break;
           case 3:
-            session = [sessionDayOne.sessionDictionary objectForKey:@"Session4"];
+            session = [sessionDayOne.sessionDictionary objectForKey:Session3];
             break;
           default:
             break;
@@ -68,16 +68,16 @@
       case 2: {
         switch (sessionId) {
           case 0:
-            session = [sessionDayTwo.sessionDictionary objectForKey:@"Session1"];
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session0];
             break;
           case 1:
-            session = [sessionDayTwo.sessionDictionary objectForKey:@"Session2"];
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session1];
             break;
           case 2:
-            session = [sessionDayTwo.sessionDictionary objectForKey:@"Session3"];
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session2];
             break;
           case 3:
-            session = [sessionDayTwo.sessionDictionary objectForKey:@"Session4"];
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session3];
             break;
           default:
             break;
@@ -87,7 +87,30 @@
       default:
         break;
     }
-    [session.trackArray setObject:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
+    //[session.trackDictionary setObject:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
+    [session.trackDictionary setValue:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
+    
+    Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
+    //NSLog(@"%@", [dateFormatter stringFromDate:a.time]);
+    
+    for (NSString *key in sessionDayOne.sessionDictionary) {
+      Session *ss = [sessionDayOne.sessionDictionary objectForKey:key];
+      
+      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+      [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
+      NSLog(@"%@", [dateFormatter stringFromDate:ss.time]);
+      
+      NSLog(@"%d", ss.trackDictionary.count);
+      for (NSString *k in ss.trackDictionary) {
+        Track *tt = [ss.trackDictionary objectForKey:k];
+        NSLog(@"%@", tt.name);
+        NSLog(@"%@", tt.speaker);
+        NSLog(@"%@", tt.speaker_bio);
+        NSLog(@"%@", tt.loc);
+      }
+    }
   }
   
   return @[sessionDayOne, sessionDayTwo];
