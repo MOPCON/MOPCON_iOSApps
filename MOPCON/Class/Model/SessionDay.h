@@ -13,4 +13,6 @@
 @property (nonatomic, strong) NSNumber *day;
 @property (nonatomic, strong) NSMutableArray *sessionArray;
 
+- (id)initWithDay:(int)day;
+
 @end

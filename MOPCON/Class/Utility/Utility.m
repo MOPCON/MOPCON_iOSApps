@@ -14,6 +14,10 @@
 @implementation Utility
 
 + (NSArray *)sessionParser:(NSDictionary *)dictionary {
+  SessionDay *sessionDayOne = [[SessionDay alloc] initWithDay:1];
+  SessionDay *sessionDayTwo = [[SessionDay alloc] initWithDay:2];
+  NSArray *sessionResultArray = @[sessionDayOne, sessionDayTwo, nil];
+  
   NSArray *array = (NSArray *)[dictionary objectForKey:@"sessions"];
   
   for (int i = 0; i < array.count; i++) {
@@ -23,6 +27,25 @@
     
     SessionDay *sessionDay = [[SessionDay alloc] init];
     sessionDay.day = [NSNumber numberWithInt:[sDay intValue]];
+    
+    int sessionId = [[aId substringWithRange:NSMakeRange(1, 1)] intValue];
+    
+    switch (sessionId) {
+      case 0:
+        ;
+        break;
+      case 1:
+        ;
+        break;
+      case 2:
+        ;
+        break;
+      case 3:
+        ;
+        break;
+      default:
+        break;
+    }
     
     NSLog(@"==%@", sessionDay.day.stringValue);
   }

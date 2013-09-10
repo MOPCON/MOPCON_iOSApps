@@ -10,4 +10,15 @@
 
 @implementation SessionDay
 
+- (id)initWithDay:(int)day {
+  self = [super init];
+  
+  if (self) {
+    [self setDay:[NSNumber numberWithInt:day]];
+    [self setSessionArray:[[NSMutableArray alloc] initWithCapacity:4]];
+  }
+  
+  return self;
+}
+
 @end
