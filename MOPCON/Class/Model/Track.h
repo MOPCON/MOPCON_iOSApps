@@ -10,12 +10,12 @@
 
 @interface Track : NSObject
 
-@property (nonatomic, strong) NSDate *startTime;
-@property (nonatomic, strong) NSDate *endTime;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *speaker;
 @property (nonatomic, strong) NSString *speaker_bio;
 @property (nonatomic, strong) NSString *keyword;
 @property (nonatomic, strong) NSString *loc;
+@property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, strong) NSDate *endTime;
 
 @end

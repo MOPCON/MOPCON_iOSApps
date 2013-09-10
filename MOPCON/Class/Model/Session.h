@@ -10,7 +10,7 @@
 
 @interface Session : NSObject
 
-@property (nonatomic, strong) NSString *time;
-@property (nonatomic, strong) NSMutableArray *trackArray;
+@property (nonatomic, strong) NSDate *time;
+@property (nonatomic, strong) NSMutableDictionary *trackArray;
 
 @end

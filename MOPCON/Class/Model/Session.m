@@ -10,4 +10,14 @@
 
 @implementation Session
 
+- (id)initWithDay:(int)day {
+  self = [super init];
+  
+  if (self) {
+    [self setTrackArray:[[NSMutableDictionary alloc] initWithCapacity:3]];
+  }
+  
+  return self;
+}
+
 @end

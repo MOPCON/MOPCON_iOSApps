@@ -55,7 +55,8 @@
       NSLog(@"%@", s);
     }
     
-    [Utility sessionParser:aJsonDict];
+    NSArray *array = [Utility sessionParser:aJsonDict];
+    NSLog(@"%@", array);
   } errorBlock:^(NSError *error) {}];
 }
 

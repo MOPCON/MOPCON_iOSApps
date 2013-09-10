@@ -11,7 +11,7 @@
 @interface SessionDay : NSObject
 
 @property (nonatomic, strong) NSNumber *day;
-@property (nonatomic, strong) NSMutableArray *sessionArray;
+@property (nonatomic, strong) NSDictionary *sessionDictionary;
 
 - (id)initWithDay:(int)day;
 
