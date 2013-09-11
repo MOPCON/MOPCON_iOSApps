@@ -88,11 +88,18 @@
         break;
     }
     //[session.trackDictionary setObject:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
-    [session.trackDictionary setValue:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
-    
-    Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
+    //[session.trackDictionary setValue:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
+    NSString *trackS = [NSString stringWithFormat:@"Track%d", trackId];
+    [session.trackDictionary setValue:track forKey:trackS];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
+    NSLog(@"%@", [dateFormatter stringFromDate:session.time]);
+    NSDictionary *dict = session.trackDictionary;
+    NSLog(@"%@", dict);
+    
+    Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    //[dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
     //NSLog(@"%@", [dateFormatter stringFromDate:a.time]);
     
     for (NSString *key in sessionDayOne.sessionDictionary) {

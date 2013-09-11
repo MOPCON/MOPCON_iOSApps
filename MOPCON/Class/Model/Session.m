@@ -10,7 +10,7 @@
 
 @implementation Session
 
-- (id)initWithDay:(int)day {
+- (id)init {
   self = [super init];
   
   if (self) {
