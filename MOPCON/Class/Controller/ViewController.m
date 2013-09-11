@@ -59,6 +59,7 @@
         NSLog(@"%@", [dateFormatter stringFromDate:s.time]);
         for (NSString *k in s.trackDictionary) {
           Track *tt = [s.trackDictionary objectForKey:k];
+          NSLog(@"%@", tt.trackId);
           NSLog(@"%@", tt.name);
           NSLog(@"%@", tt.speaker);
           NSLog(@"%@", tt.speaker_bio);
@@ -112,13 +113,67 @@
   return session.trackDictionary.count;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  switch (section) {
+    case 0:
+      return @"上午9:00";
+    case 1:
+      return @"上午10:20";
+    case 2:
+      return @"下午13:30";
+    case 3:
+      return @"下午15:10";
+    default:
+      break;
+  }
+  return @"";
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
   }
-  [cell.textLabel setText:[NSString stringWithFormat:@"%d", indexPath.row]];
+
+  NSString *sessionId;
+  switch (indexPath.section) {
+    case 0:
+      sessionId = Session0;
+      break;
+    case 1:
+      sessionId = Session1;
+      break;
+    case 2:
+      sessionId = Session2;
+      break;
+    case 3:
+      sessionId = Session3;
+      break;
+    default:
+      break;
+  }
+  NSString *trackId;
+  switch (indexPath.row) {
+    case 0:
+      trackId = Track0;
+      break;
+    case 1:
+      trackId = Track1;
+      break;
+    case 2:
+      trackId = Track2;
+      break;
+    default:
+      break;
+  }
+  
+  Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
+  Track *track = [session.trackDictionary objectForKey:trackId];
+  [cell.textLabel setText:track.name];
+  [cell.detailTextLabel setText:track.speaker];
+  
   return cell;
 }
 
@@ -140,6 +195,7 @@
   self.dayenum = ConfDayOne;
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:0];
+    [self.tableView reloadData];
   }
 }
 
@@ -147,6 +203,7 @@
   self.dayenum = ConfDayTwo;
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:1];
+    [self.tableView reloadData];
   }
 }
 

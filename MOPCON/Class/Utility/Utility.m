@@ -35,6 +35,7 @@
     int trackId = [[aId substringWithRange:NSMakeRange(2, 1)] intValue];
     
     Track *track = [[Track alloc] init];
+    [track setTrackId:aId];
     [track setName:aName];
     [track setSpeaker:aSpeaker];
     [track setSpeaker_bio:aSpeaker_bio];
@@ -112,6 +113,7 @@
       NSLog(@"%d", ss.trackDictionary.count);
       for (NSString *k in ss.trackDictionary) {
         Track *tt = [ss.trackDictionary objectForKey:k];
+        NSLog(@"%@", tt.trackId);
         NSLog(@"%@", tt.name);
         NSLog(@"%@", tt.speaker);
         NSLog(@"%@", tt.speaker_bio);

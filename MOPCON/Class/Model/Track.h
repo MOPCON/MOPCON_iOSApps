@@ -10,6 +10,7 @@
 
 @interface Track : NSObject
 
+@property (nonatomic, strong) NSString *trackId;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *speaker;
 @property (nonatomic, strong) NSString *speaker_bio;
