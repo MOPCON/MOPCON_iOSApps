@@ -11,7 +11,9 @@
 #import "URLConnection.h"
 #import "CJSONDeserializer.h"
 #import "Utility.h"
+#import "ShadowView.h"
 
+#import <QuartzCore/QuartzCore.h>
 
 @interface SessionViewController () {
   bool isFirstDay;
@@ -101,7 +103,8 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    cell = [[[NSBundle mainBundle] loadNibNamed:@"SessionViewCell" owner:nil options:nil] lastObject];
   }
 
   NSString *sessionId;
@@ -138,8 +141,11 @@
   
   Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
   Track *track = [session.trackDictionary objectForKey:trackId];
-  [cell.textLabel setText:track.name];
-  [cell.detailTextLabel setText:track.speaker];
+//  [cell.textLabel setText:track.name];
+//  [cell.detailTextLabel setText:track.speaker];
+  
+  [(UILabel *)[cell viewWithTag:101] setText:track.name];
+  [(UILabel *)[cell viewWithTag:102] setText:track.loc];
   
   return cell;
 }
@@ -192,6 +198,50 @@
   Track *track = [session.trackDictionary objectForKey:trackId];
   [detailViewController setTrack:track];
   [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+  return 21.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+  UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
+  //[view setBackgroundColor:[UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0]];
+  [view setBackgroundColor:[UIColor clearColor]];
+  [view setAlpha:1.0];
+  
+  ShadowView *sView = [[ShadowView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
+  [view addSubview:sView];
+  [sView viewAppear];
+  
+  NSString *title;
+  switch (section) {
+    case 0:
+      title = @"上午9:00";
+      break;
+    case 1:
+      title = @"上午10:20";
+      break;
+    case 2:
+      title = @"下午13:30";
+      break;
+    case 3:
+      title = @"下午15:10";
+      break;
+    default:
+      break;
+  }
+  
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 100, 17)];
+  [label setText:title];
+  [label setBackgroundColor:[UIColor clearColor]];
+  [view addSubview:label];
+  
+  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SShadow.png"]];
+  [imageView setFrame:CGRectMake(0, 0, 320, 1)];
+  [view addSubview:imageView];
+  
+  return view;
 }
 
 #pragma mark - Action
