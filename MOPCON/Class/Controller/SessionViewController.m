@@ -13,7 +13,9 @@
 #import "Utility.h"
 
 
-@interface SessionViewController ()
+@interface SessionViewController () {
+  bool isFirstDay;
+}
 
 @end
 
@@ -25,6 +27,7 @@
   if (self) {
     self.title = NSLocalizedString(@"Session", @"Session");
     self.tabBarItem.image = [UIImage imageNamed:@"second"];
+    isFirstDay = YES;
   }
 
   return self;
@@ -32,50 +35,11 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+}
 
-  NSURL               *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mopcon.org/2013/api/session.php"]];
-  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
-
-  [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
-    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"ResponseBody=%@", jsonString);
-
-    NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
-    NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
-    NSLog(@"%@", lastupdate);
-
-    NSString *documentPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    [jsondata writeToFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt", lastupdate]] atomically:YES];
-    
-    
-    [self setSessionArray:[Utility sessionParser:aJsonDict]];
-    NSLog(@"%@, \r\nsession count = %d", self.sessionArray, self.sessionArray.count);
-    
-    for (int i = 0; i < self.sessionArray.count; i++) {
-      SessionDay *d = [self.sessionArray objectAtIndex:i];
-      for (NSString *key in d.sessionDictionary) {
-        Session *s = [d.sessionDictionary objectForKey:key];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-        NSLog(@"%@", [dateFormatter stringFromDate:s.time]);
-        for (NSString *k in s.trackDictionary) {
-          Track *tt = [s.trackDictionary objectForKey:k];
-          NSLog(@"%@", tt.trackId);
-          NSLog(@"%@", tt.name);
-          NSLog(@"%@", tt.speaker);
-          NSLog(@"%@", tt.speaker_bio);
-          NSLog(@"%@", tt.loc);
-        }
-      }
-    }
-    
-    
-    self.sessionDay = [self.sessionArray objectAtIndex:0];
-    self.dayLabel.text = @"10月26日星期六";
-    [self.tableView reloadData];
-    
-  } errorBlock:^(NSError *error) {}];
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  [self updateSessionJson];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -237,6 +201,7 @@
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:0];
     self.dayLabel.text = @"10月26日星期六";
+    isFirstDay = YES;
     [self.tableView reloadData];
   }
 }
@@ -246,8 +211,80 @@
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:1];
     self.dayLabel.text = @"10月27日星期日";
+    isFirstDay = NO;
     [self.tableView reloadData];
   }
+}
+
+#pragma mark - private
+
+- (void)updateSessionJson {
+  NSURL               *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://mopcon.org/2013/api/session.php"]];
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+  
+  [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"ResponseBody=%@", jsonString);
+    
+    NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
+    NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
+    NSLog(@"%@", lastupdate);
+    
+    NSString *documentPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    //[jsondata writeToFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt", lastupdate]] atomically:YES];
+    [jsondata writeToFile:[documentPath stringByAppendingPathComponent:@"session.txt"] atomically:YES];
+
+    [self setSessionArray:[Utility sessionParser:aJsonDict]];
+    
+//    NSLog(@"%@, \r\nsession count = %d", self.sessionArray, self.sessionArray.count);
+//    
+//    for (int i = 0; i < self.sessionArray.count; i++) {
+//      SessionDay *d = [self.sessionArray objectAtIndex:i];
+//      for (NSString *key in d.sessionDictionary) {
+//        Session *s = [d.sessionDictionary objectForKey:key];
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
+//        NSLog(@"%@", [dateFormatter stringFromDate:s.time]);
+//        for (NSString *k in s.trackDictionary) {
+//          Track *tt = [s.trackDictionary objectForKey:k];
+//          NSLog(@"%@", tt.trackId);
+//          NSLog(@"%@", tt.name);
+//          NSLog(@"%@", tt.speaker);
+//          NSLog(@"%@", tt.speaker_bio);
+//          NSLog(@"%@", tt.loc);
+//        }
+//      }
+//    }
+    
+    
+    if (isFirstDay) {
+      self.sessionDay = [self.sessionArray objectAtIndex:0];
+      self.dayLabel.text = @"10月26日星期六";
+    } else {
+      self.sessionDay = [self.sessionArray objectAtIndex:1];
+      self.dayLabel.text = @"10月27日星期日";
+    }
+    
+    [self.tableView reloadData];
+  } errorBlock:^(NSError *error) {
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"session.txt"];
+    NSError *errors = nil;
+    NSString *file = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&errors];
+    NSData *fileData = [file dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:fileData error:nil];
+    [self setSessionArray:[Utility sessionParser:aJsonDict]];
+    
+    if (isFirstDay) {
+      self.sessionDay = [self.sessionArray objectAtIndex:0];
+      self.dayLabel.text = @"10月26日星期六";
+    } else {
+      self.sessionDay = [self.sessionArray objectAtIndex:1];
+      self.dayLabel.text = @"10月27日星期日";
+    }
+
+    [self.tableView reloadData];
+  }];
 }
 
 @end
