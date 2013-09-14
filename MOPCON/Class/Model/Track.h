@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *trackId;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *speaker;
 @property (nonatomic, strong) NSString *speaker_bio;
 @property (nonatomic, strong) NSString *keyword;

@@ -6,16 +6,18 @@
 //  Copyright (c) 2013年 MOPCON. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SessionViewController.h"
+#import "SessionDetailViewController.h"
 #import "URLConnection.h"
 #import "CJSONDeserializer.h"
 #import "Utility.h"
 
-@interface ViewController ()
+
+@interface SessionViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SessionViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -70,6 +72,7 @@
     
     
     self.sessionDay = [self.sessionArray objectAtIndex:0];
+    self.dayLabel.text = @"10月26日星期六";
     [self.tableView reloadData];
     
   } errorBlock:^(NSError *error) {}];
@@ -180,13 +183,51 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  // Navigation logic may go here. Create and push another view controller.
-  /*
-   <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-   // ...
-   // Pass the selected object to the new view controller.
-   [self.navigationController pushViewController:detailViewController animated:YES];
-   */
+  [tableView deselectRowAtIndexPath:indexPath animated:YES];
+  
+  SessionDetailViewController *detailViewController;
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController568" bundle:nil];
+  } else {
+    detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
+  }
+  
+  NSString *sessionId;
+  switch (indexPath.section) {
+    case 0:
+      sessionId = Session0;
+      break;
+    case 1:
+      sessionId = Session1;
+      break;
+    case 2:
+      sessionId = Session2;
+      break;
+    case 3:
+      sessionId = Session3;
+      break;
+    default:
+      break;
+  }
+  NSString *trackId;
+  switch (indexPath.row) {
+    case 0:
+      trackId = Track0;
+      break;
+    case 1:
+      trackId = Track1;
+      break;
+    case 2:
+      trackId = Track2;
+      break;
+    default:
+      break;
+  }
+  
+  Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
+  Track *track = [session.trackDictionary objectForKey:trackId];
+  [detailViewController setTrack:track];
+  [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - Action
@@ -195,6 +236,7 @@
   self.dayenum = ConfDayOne;
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:0];
+    self.dayLabel.text = @"10月26日星期六";
     [self.tableView reloadData];
   }
 }
@@ -203,6 +245,7 @@
   self.dayenum = ConfDayTwo;
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:1];
+    self.dayLabel.text = @"10月27日星期日";
     [self.tableView reloadData];
   }
 }

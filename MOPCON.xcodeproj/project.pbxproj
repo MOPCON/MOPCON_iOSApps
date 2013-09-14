@@ -10,8 +10,12 @@
 		20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234A817DDCFD900EDC65D /* SessionDay.m */; };
 		20A234AC17DDD0E000EDC65D /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AB17DDD0E000EDC65D /* Session.m */; };
 		20A234AF17DDD1C200EDC65D /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AE17DDD1C200EDC65D /* Track.m */; };
-		20A8424E17DD9E4A00F0C49F /* ViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A8424D17DD9E4A00F0C49F /* ViewController568.xib */; };
+		20A8424E17DD9E4A00F0C49F /* SessionViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20A8424D17DD9E4A00F0C49F /* SessionViewController568.xib */; };
 		20A8425617DDA78700F0C49F /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A8425517DDA78700F0C49F /* Utility.m */; };
+		20CC1DC317E4357D00576014 /* SessionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CC1DC117E4357D00576014 /* SessionDetailViewController.m */; };
+		20CC1DC417E4357D00576014 /* SessionDetailViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CC1DC217E4357D00576014 /* SessionDetailViewController568.xib */; };
+		20CC1DC617E4373A00576014 /* SessionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CC1DC517E4373A00576014 /* SessionDetailViewController.xib */; };
+		20CC1DC817E438AF00576014 /* SessionDetailViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20CC1DC717E438AF00576014 /* SessionDetailViewCell.xib */; };
 		B17348B617DCCA29009EF3F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B517DCCA29009EF3F1 /* UIKit.framework */; };
 		B17348B817DCCA29009EF3F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B717DCCA29009EF3F1 /* Foundation.framework */; };
 		B17348BA17DCCA29009EF3F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B917DCCA29009EF3F1 /* CoreGraphics.framework */; };
@@ -25,8 +29,8 @@
 		B17348D817DCCA29009EF3F1 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348D717DCCA29009EF3F1 /* second.png */; };
 		B17348DA17DCCA29009EF3F1 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348D917DCCA29009EF3F1 /* second@2x.png */; };
 		B17348E817DCCAD4009EF3F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B17348E717DCCAD4009EF3F1 /* AppDelegate.m */; };
-		B17348F117DCCAF6009EF3F1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17348EC17DCCAF6009EF3F1 /* ViewController.m */; };
-		B17348F217DCCAF6009EF3F1 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17348ED17DCCAF6009EF3F1 /* ViewController.xib */; };
+		B17348F117DCCAF6009EF3F1 /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B17348EC17DCCAF6009EF3F1 /* SessionViewController.m */; };
+		B17348F217DCCAF6009EF3F1 /* SessionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17348ED17DCCAF6009EF3F1 /* SessionViewController.xib */; };
 		B17348F317DCCAF6009EF3F1 /* URLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B17348F017DCCAF6009EF3F1 /* URLConnection.m */; };
 		B1D19B5C17DCCC300072F1A8 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */; };
 		B1D19B5D17DCCC300072F1A8 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */; };
@@ -51,9 +55,14 @@
 		20A234AB17DDD0E000EDC65D /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		20A234AD17DDD1C200EDC65D /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
 		20A234AE17DDD1C200EDC65D /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
-		20A8424D17DD9E4A00F0C49F /* ViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController568.xib; sourceTree = "<group>"; };
+		20A8424D17DD9E4A00F0C49F /* SessionViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionViewController568.xib; sourceTree = "<group>"; };
 		20A8425417DDA78700F0C49F /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		20A8425517DDA78700F0C49F /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		20CC1DC017E4357D00576014 /* SessionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewController.h; sourceTree = "<group>"; };
+		20CC1DC117E4357D00576014 /* SessionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewController.m; sourceTree = "<group>"; };
+		20CC1DC217E4357D00576014 /* SessionDetailViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailViewController568.xib; sourceTree = "<group>"; };
+		20CC1DC517E4373A00576014 /* SessionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailViewController.xib; sourceTree = "<group>"; };
+		20CC1DC717E438AF00576014 /* SessionDetailViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailViewCell.xib; sourceTree = "<group>"; };
 		B17348B217DCCA29009EF3F1 /* MOPCON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOPCON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17348B517DCCA29009EF3F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B17348B717DCCA29009EF3F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -71,9 +80,9 @@
 		B17348D917DCCA29009EF3F1 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		B17348E617DCCAD4009EF3F1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B17348E717DCCAD4009EF3F1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B17348EB17DCCAF6009EF3F1 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B17348EC17DCCAF6009EF3F1 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B17348ED17DCCAF6009EF3F1 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		B17348EB17DCCAF6009EF3F1 /* SessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
+		B17348EC17DCCAF6009EF3F1 /* SessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
+		B17348ED17DCCAF6009EF3F1 /* SessionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionViewController.xib; sourceTree = "<group>"; };
 		B17348EF17DCCAF6009EF3F1 /* URLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLConnection.h; sourceTree = "<group>"; };
 		B17348F017DCCAF6009EF3F1 /* URLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLConnection.m; sourceTree = "<group>"; };
 		B1D19B5917DCCC300072F1A8 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
@@ -135,6 +144,7 @@
 		20A8424F17DD9F9100F0C49F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				20CC1DC717E438AF00576014 /* SessionDetailViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,16 +220,20 @@
 		B17348EA17DCCAF6009EF3F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B17348EB17DCCAF6009EF3F1 /* ViewController.h */,
-				B17348EC17DCCAF6009EF3F1 /* ViewController.m */,
-				B17348ED17DCCAF6009EF3F1 /* ViewController.xib */,
-				20A8424D17DD9E4A00F0C49F /* ViewController568.xib */,
-				B1D19B5917DCCC300072F1A8 /* NewsViewController.h */,
-				B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */,
-				B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */,
 				B1D19B5E17DCCC4B0072F1A8 /* MapViewController.h */,
 				B1D19B5F17DCCC4B0072F1A8 /* MapViewController.m */,
 				B1D19B6017DCCC4B0072F1A8 /* MapViewController.xib */,
+				B1D19B5917DCCC300072F1A8 /* NewsViewController.h */,
+				B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */,
+				B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */,
+				20CC1DC017E4357D00576014 /* SessionDetailViewController.h */,
+				20CC1DC117E4357D00576014 /* SessionDetailViewController.m */,
+				20CC1DC517E4373A00576014 /* SessionDetailViewController.xib */,
+				20CC1DC217E4357D00576014 /* SessionDetailViewController568.xib */,
+				B17348EB17DCCAF6009EF3F1 /* SessionViewController.h */,
+				B17348EC17DCCAF6009EF3F1 /* SessionViewController.m */,
+				B17348ED17DCCAF6009EF3F1 /* SessionViewController.xib */,
+				20A8424D17DD9E4A00F0C49F /* SessionViewController568.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -347,10 +361,13 @@
 				B17348D317DCCA29009EF3F1 /* first@2x.png in Resources */,
 				B17348D817DCCA29009EF3F1 /* second.png in Resources */,
 				B17348DA17DCCA29009EF3F1 /* second@2x.png in Resources */,
-				B17348F217DCCAF6009EF3F1 /* ViewController.xib in Resources */,
+				B17348F217DCCAF6009EF3F1 /* SessionViewController.xib in Resources */,
 				B1D19B5D17DCCC300072F1A8 /* NewsViewController.xib in Resources */,
 				B1D19B6217DCCC4B0072F1A8 /* MapViewController.xib in Resources */,
-				20A8424E17DD9E4A00F0C49F /* ViewController568.xib in Resources */,
+				20A8424E17DD9E4A00F0C49F /* SessionViewController568.xib in Resources */,
+				20CC1DC417E4357D00576014 /* SessionDetailViewController568.xib in Resources */,
+				20CC1DC617E4373A00576014 /* SessionDetailViewController.xib in Resources */,
+				20CC1DC817E438AF00576014 /* SessionDetailViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +380,7 @@
 			files = (
 				B17348C217DCCA29009EF3F1 /* main.m in Sources */,
 				B17348E817DCCAD4009EF3F1 /* AppDelegate.m in Sources */,
-				B17348F117DCCAF6009EF3F1 /* ViewController.m in Sources */,
+				B17348F117DCCAF6009EF3F1 /* SessionViewController.m in Sources */,
 				B17348F317DCCAF6009EF3F1 /* URLConnection.m in Sources */,
 				B1D19B5C17DCCC300072F1A8 /* NewsViewController.m in Sources */,
 				B1D19B6117DCCC4B0072F1A8 /* MapViewController.m in Sources */,
@@ -381,6 +398,7 @@
 				20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */,
 				20A234AC17DDD0E000EDC65D /* Session.m in Sources */,
 				20A234AF17DDD1C200EDC65D /* Track.m in Sources */,
+				20CC1DC317E4357D00576014 /* SessionDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

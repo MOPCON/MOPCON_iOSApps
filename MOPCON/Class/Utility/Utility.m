@@ -23,6 +23,7 @@
     NSDictionary *d = (NSDictionary *)[array objectAtIndex:i];
     NSString *aId = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"id"]];
     NSString *aName = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"name"]];
+    NSString *aContent = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"content"]];
     NSString *aSpeaker = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"speaker"]];
     NSString *aSpeaker_bio = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"speaker_bio"]];
     NSString *aKeyword = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"keyword"]];
@@ -37,6 +38,7 @@
     Track *track = [[Track alloc] init];
     [track setTrackId:aId];
     [track setName:aName];
+    [track setContent:aContent];
     [track setSpeaker:aSpeaker];
     [track setSpeaker_bio:aSpeaker_bio];
     [track setKeyword:aKeyword];
@@ -115,6 +117,7 @@
         Track *tt = [ss.trackDictionary objectForKey:k];
         NSLog(@"%@", tt.trackId);
         NSLog(@"%@", tt.name);
+        NSLog(@"%@", tt.content);
         NSLog(@"%@", tt.speaker);
         NSLog(@"%@", tt.speaker_bio);
         NSLog(@"%@", tt.loc);

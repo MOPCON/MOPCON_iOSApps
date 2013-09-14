@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "SessionViewController.h"
 #import "NewsViewController.h"
 #import "MapViewController.h"
 
@@ -16,22 +16,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   // Override point for customization after application launch.
-  UIViewController  *viewController1;// = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-  UIViewController  *viewController2;// = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
-  UIViewController  *viewController3;// = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
-  
+  UIViewController  *viewController1;
+  UIViewController  *viewController2;
+  UIViewController  *viewController3;
+
   if ([[UIScreen mainScreen] bounds].size.height == 568) {
-    viewController1 = [[ViewController alloc] initWithNibName:@"ViewController568" bundle:nil];
+    viewController1 = [[SessionViewController alloc] initWithNibName:@"SessionViewController568" bundle:nil];
     viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController568" bundle:nil];
     viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController568" bundle:nil];
   } else {
-    viewController1 = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    viewController1 = [[SessionViewController alloc] initWithNibName:@"SessionViewController" bundle:nil];
     viewController2 = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
     viewController3 = [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
   }
+
+  UINavigationController *sessionNavi = [[UINavigationController alloc] initWithRootViewController:viewController1];
+  UINavigationController *newsNavi = [[UINavigationController alloc] initWithRootViewController:viewController2];
   
   self.tabBarController = [[UITabBarController alloc] init];
-  self.tabBarController.viewControllers = @[viewController1, viewController2, viewController3];
+  self.tabBarController.viewControllers = @[sessionNavi, viewController2, viewController3];
   self.window.rootViewController = self.tabBarController;
   [self.tabBarController.tabBar setTintColor:[UIColor lightGrayColor]];
   [self.window makeKeyAndVisible];
