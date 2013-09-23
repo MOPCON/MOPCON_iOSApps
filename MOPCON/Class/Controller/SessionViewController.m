@@ -222,9 +222,6 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
   UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
-  //[view setBackgroundColor:[UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0]];
-  //[view setBackgroundColor:[UIColor clearColor]];
-  //[view setAlpha:1.0];
   
   ShadowView *sView = [[ShadowView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
   [sView setAlpha:0.95];
@@ -253,10 +250,10 @@
   [label setText:title];
   [label setBackgroundColor:[UIColor clearColor]];
   [view addSubview:label];
-  
-  UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SShadow.png"]];
-  [imageView setFrame:CGRectMake(0, 0, 320, 0.5)];
-  [view addSubview:imageView];
+
+  UIView *topline = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+  [topline setBackgroundColor:[UIColor lightGrayColor]];
+  [view addSubview:topline];
   
   UIView *bottomline = [[UIView alloc] initWithFrame:CGRectMake(0, 21, 320, 0.5)];
   [bottomline setBackgroundColor:[UIColor lightGrayColor]];
