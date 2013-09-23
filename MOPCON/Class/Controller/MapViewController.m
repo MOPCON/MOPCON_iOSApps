@@ -19,7 +19,7 @@
 
   if (self) {
     self.title = NSLocalizedString(@"Map", @"Map");
-    self.tabBarItem.image = [UIImage imageNamed:@"second"];
+    self.tabBarItem.image = [UIImage imageNamed:@"maps_gray.png"];
   }
 
   return self;

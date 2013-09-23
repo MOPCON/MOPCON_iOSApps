@@ -28,7 +28,8 @@
 
   if (self) {
     self.title = NSLocalizedString(@"Session", @"Session");
-    self.tabBarItem.image = [UIImage imageNamed:@"second"];
+    self.navigationItem.title = @"10月26日星期六";
+    self.tabBarItem.image = [UIImage imageNamed:@"event_gray.png"];
     isFirstDay = YES;
   }
 
@@ -37,6 +38,23 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(refreshPropertyList:)];
+  //self.navigationItem.rightBarButtonItem = anotherButton;
+  
+  UIButton *rightbutton =  [UIButton buttonWithType:UIButtonTypeCustom];
+  [rightbutton setImage:[UIImage imageNamed:@"arrow_left.png"] forState:UIControlStateNormal];
+  [rightbutton addTarget:self action:@selector(nextDay:) forControlEvents:UIControlEventTouchUpInside];
+  [rightbutton setFrame:CGRectMake(0, 0, 30, 30)];
+  
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
+  
+  UIButton *leftbutton =  [UIButton buttonWithType:UIButtonTypeCustom];
+  [leftbutton setImage:[UIImage imageNamed:@"arrow_right.png"] forState:UIControlStateNormal];
+  [leftbutton addTarget:self action:@selector(preDay:) forControlEvents:UIControlEventTouchUpInside];
+  [leftbutton setFrame:CGRectMake(0, 0, 30, 30)];
+  
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -251,6 +269,7 @@
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:0];
     self.dayLabel.text = @"10月26日星期六";
+    self.navigationItem.title = @"10月26日星期六";
     isFirstDay = YES;
     [self.tableView reloadData];
   }
@@ -261,6 +280,7 @@
   if (self.sessionArray.count == 2) {
     self.sessionDay = [self.sessionArray objectAtIndex:1];
     self.dayLabel.text = @"10月27日星期日";
+    self.navigationItem.title = @"10月27日星期日";
     isFirstDay = NO;
     [self.tableView reloadData];
   }
@@ -311,9 +331,11 @@
     if (isFirstDay) {
       self.sessionDay = [self.sessionArray objectAtIndex:0];
       self.dayLabel.text = @"10月26日星期六";
+      self.navigationItem.title = @"10月26日星期六";
     } else {
       self.sessionDay = [self.sessionArray objectAtIndex:1];
       self.dayLabel.text = @"10月27日星期日";
+      self.navigationItem.title = @"10月27日星期日";
     }
     
     [self.tableView reloadData];
@@ -328,9 +350,11 @@
     if (isFirstDay) {
       self.sessionDay = [self.sessionArray objectAtIndex:0];
       self.dayLabel.text = @"10月26日星期六";
+      self.navigationItem.title = @"10月26日星期六";
     } else {
       self.sessionDay = [self.sessionArray objectAtIndex:1];
       self.dayLabel.text = @"10月27日星期日";
+      self.navigationItem.title = @"10月27日星期日";
     }
 
     [self.tableView reloadData];

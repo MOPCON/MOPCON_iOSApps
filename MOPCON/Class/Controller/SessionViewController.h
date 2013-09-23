@@ -26,6 +26,7 @@ typedef int ConfDayEnum;
 @property (nonatomic, strong) NSArray               *sessionArray;
 @property (nonatomic, strong) SessionDay            *sessionDay;
 @property (nonatomic, assign) ConfDayEnum           dayenum;
+//@property (nonatomic, strong) UI
 
 - (IBAction)preDay:(id)sender;
 - (IBAction)nextDay:(id)sender;
