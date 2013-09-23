@@ -39,22 +39,20 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Show" style:UIBarButtonItemStylePlain target:self action:@selector(refreshPropertyList:)];
-  //self.navigationItem.rightBarButtonItem = anotherButton;
+  self.nextDayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [self.nextDayButton setImage:[UIImage imageNamed:@"arrow_left.png"] forState:UIControlStateNormal];
+  [self.nextDayButton addTarget:self action:@selector(nextDay:) forControlEvents:UIControlEventTouchUpInside];
+  [self.nextDayButton setFrame:CGRectMake(0, 0, 30, 30)];
   
-  UIButton *rightbutton =  [UIButton buttonWithType:UIButtonTypeCustom];
-  [rightbutton setImage:[UIImage imageNamed:@"arrow_left.png"] forState:UIControlStateNormal];
-  [rightbutton addTarget:self action:@selector(nextDay:) forControlEvents:UIControlEventTouchUpInside];
-  [rightbutton setFrame:CGRectMake(0, 0, 30, 30)];
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.nextDayButton];
   
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightbutton];
+  self.preDayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+  [self.preDayButton setImage:[UIImage imageNamed:@"arrow_right.png"] forState:UIControlStateNormal];
+  [self.preDayButton addTarget:self action:@selector(preDay:) forControlEvents:UIControlEventTouchUpInside];
+  [self.preDayButton setFrame:CGRectMake(0, 0, 30, 30)];
   
-  UIButton *leftbutton =  [UIButton buttonWithType:UIButtonTypeCustom];
-  [leftbutton setImage:[UIImage imageNamed:@"arrow_right.png"] forState:UIControlStateNormal];
-  [leftbutton addTarget:self action:@selector(preDay:) forControlEvents:UIControlEventTouchUpInside];
-  [leftbutton setFrame:CGRectMake(0, 0, 30, 30)];
-  
-  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftbutton];
+  self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.preDayButton];
+  [self.navigationItem.leftBarButtonItem setEnabled:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -225,10 +223,11 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
   UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
   //[view setBackgroundColor:[UIColor colorWithRed:0.75 green:0.75 blue:0.75 alpha:1.0]];
-  [view setBackgroundColor:[UIColor clearColor]];
-  [view setAlpha:1.0];
+  //[view setBackgroundColor:[UIColor clearColor]];
+  //[view setAlpha:1.0];
   
   ShadowView *sView = [[ShadowView alloc] initWithFrame:CGRectMake(0, 0, 320, 21)];
+  [sView setAlpha:0.95];
   [view addSubview:sView];
   [sView viewAppear];
   
@@ -256,8 +255,12 @@
   [view addSubview:label];
   
   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SShadow.png"]];
-  [imageView setFrame:CGRectMake(0, 0, 320, 1)];
+  [imageView setFrame:CGRectMake(0, 0, 320, 0.5)];
   [view addSubview:imageView];
+  
+  UIView *bottomline = [[UIView alloc] initWithFrame:CGRectMake(0, 21, 320, 0.5)];
+  [bottomline setBackgroundColor:[UIColor lightGrayColor]];
+  [view addSubview:bottomline];
   
   return view;
 }
@@ -272,6 +275,8 @@
     self.navigationItem.title = @"10月26日星期六";
     isFirstDay = YES;
     [self.tableView reloadData];
+    [self.navigationItem.leftBarButtonItem setEnabled:NO];
+    [self.navigationItem.rightBarButtonItem setEnabled:YES];
   }
 }
 
@@ -283,6 +288,8 @@
     self.navigationItem.title = @"10月27日星期日";
     isFirstDay = NO;
     [self.tableView reloadData];
+    [self.navigationItem.leftBarButtonItem setEnabled:YES];
+    [self.navigationItem.rightBarButtonItem setEnabled:NO];
   }
 }
 

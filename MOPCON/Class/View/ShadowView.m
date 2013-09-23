@@ -30,7 +30,11 @@
 	[gradientLayer setStartPoint:CGPointMake(0.5, 0.0)];
 	[gradientLayer setEndPoint:CGPointMake(0.5, 1.0)];
 	
-	gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithWhite:0.4 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.5 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.6 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.65 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.70 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.75 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.9 alpha:0.5].CGColor, nil];
+//	gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithWhite:0.4 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.5 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.6 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.65 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.70 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.75 alpha:0.5].CGColor, nil];
+
+  gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithWhite:0.65 alpha:0.85].CGColor, (id)[UIColor colorWithWhite:0.7 alpha:0.85].CGColor, (id)[UIColor colorWithWhite:0.8 alpha:0.85].CGColor, (id)[UIColor colorWithWhite:0.85 alpha:0.85].CGColor, (id)[UIColor colorWithWhite:0.90 alpha:0.85].CGColor, (id)[UIColor colorWithWhite:0.95 alpha:0.85].CGColor, nil];
+  
+// 	gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor colorWithWhite:0.70 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.75 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.77 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.78 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.80 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.85 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.9 alpha:1.0].CGColor, (id)[UIColor colorWithWhite:0.96 alpha:0.5].CGColor, (id)[UIColor colorWithWhite:0.98 alpha:0.5].CGColor, nil];
   
 	self.backgroundColor = [UIColor clearColor];
 }
