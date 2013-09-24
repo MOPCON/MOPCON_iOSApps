@@ -53,6 +53,8 @@
   
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.preDayButton];
   [self.navigationItem.leftBarButtonItem setEnabled:NO];
+  
+  [self.tableView setRowHeight:54];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
