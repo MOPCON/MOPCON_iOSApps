@@ -157,11 +157,11 @@
   
   Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
   Track *track = [session.trackDictionary objectForKey:trackId];
-//  [cell.textLabel setText:track.name];
-//  [cell.detailTextLabel setText:track.speaker];
   
   [(UILabel *)[cell viewWithTag:101] setText:track.name];
   [(UILabel *)[cell viewWithTag:102] setText:track.loc];
+  UIImageView *imageView = (UIImageView *)[cell viewWithTag:103];
+  [imageView setImage:[UIImage imageNamed:@"01.png"]];
   
   return cell;
 }
