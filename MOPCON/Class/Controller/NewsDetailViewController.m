@@ -7,6 +7,7 @@
 //
 
 #import "NewsDetailViewController.h"
+#import "VerticallyAlignedLabel.h"
 
 @interface NewsDetailViewController ()
 
@@ -28,7 +29,7 @@
   if ([[UIScreen mainScreen] bounds].size.height == 568) {
     [self.tableView setRowHeight:520.0f];
   } else {
-    [self.tableView setRowHeight:420.0f];
+    [self.tableView setRowHeight:480.0f];
   }
   [self.tableView setBackgroundColor:[UIColor clearColor]];
 }
@@ -57,7 +58,11 @@
   }
   
   [(UILabel *)[cell viewWithTag:101] setText:self.news.title];
-  [(UILabel *)[cell viewWithTag:103] setText:self.news.content];
+  //[(UILabel *)[cell viewWithTag:103] setText:self.news.content];
+  VerticallyAlignedLabel *label = (VerticallyAlignedLabel *)[cell viewWithTag:103];
+  [label setVerticalAlignment:VerticalAlignmentTop];
+  [label setText:self.news.content];
+  //[(VerticallyAlignedLabel *)[cell viewWithTag:103] setText:self.news.content];
   
   return cell;
 }

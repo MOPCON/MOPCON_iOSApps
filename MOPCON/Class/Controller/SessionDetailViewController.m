@@ -27,7 +27,7 @@
   if ([[UIScreen mainScreen] bounds].size.height == 568) {
     [self.tableView setRowHeight:520.0f];
   } else {
-    [self.tableView setRowHeight:420.0f];
+    [self.tableView setRowHeight:480.0f];
   }
   [self.tableView setBackgroundColor:[UIColor clearColor]];
 }
