@@ -11,5 +11,6 @@
 @interface Utility : NSObject
 
 + (NSArray *)sessionParser:(NSDictionary *)dictionary;
++ (NSArray *)newsParser:(NSDictionary *)dictionary;
 
 @end

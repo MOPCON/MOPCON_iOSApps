@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewsViewController : UIViewController
+@interface NewsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) IBOutlet UITableView  *tableView;
+@property (nonatomic, strong) NSArray               *newsArray;
 
 @end

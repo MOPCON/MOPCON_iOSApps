@@ -10,6 +10,7 @@
 #import "SessionDay.h"
 #import "Session.h"
 #import "Track.h"
+#import "News.h"
 
 @implementation Utility
 
@@ -129,6 +130,34 @@
   }
   
   return @[sessionDayOne, sessionDayTwo];
+}
+
++ (NSArray *)newsParser:(NSDictionary *)dictionary {
+  NSMutableArray *newsArray = [[NSMutableArray alloc] initWithCapacity:10];
+  NSArray *array = (NSArray *)[dictionary objectForKey:@"news"];
+  
+  for (int i = 0; i < array.count; i++) {
+    NSDictionary *d = (NSDictionary *)[array objectAtIndex:i];
+    NSString *aId = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"id"]];
+    NSString *aTitle = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"title"]];
+    NSString *aContent = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"content"]];
+    //NSString *aPubtime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"pub_time"]];
+    
+    News *news = [[News alloc] init];
+    [news setNewsId:aId];
+    [news setTitle:aTitle];
+    [news setContent:aContent];
+    [newsArray addObject:news];
+  }
+  
+  for (int i = 0; i < newsArray.count; i++) {
+    News *news = [newsArray objectAtIndex:i];
+    NSLog(@"%@", news.newsId);
+    NSLog(@"%@", news.title);
+    NSLog(@"%@", news.content);
+  }
+  
+  return newsArray;
 }
 
 @end

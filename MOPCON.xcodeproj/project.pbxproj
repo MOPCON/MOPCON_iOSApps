@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2086118617F2789700B82F25 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 2086118517F2789700B82F25 /* News.m */; };
+		2086118817F286D700B82F25 /* NewsViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2086118717F286D700B82F25 /* NewsViewController568.xib */; };
 		20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234A817DDCFD900EDC65D /* SessionDay.m */; };
 		20A234AC17DDD0E000EDC65D /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AB17DDD0E000EDC65D /* Session.m */; };
 		20A234AF17DDD1C200EDC65D /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AE17DDD1C200EDC65D /* Track.m */; };
@@ -69,6 +71,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2086118417F2789700B82F25 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		2086118517F2789700B82F25 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		2086118717F286D700B82F25 /* NewsViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController568.xib; sourceTree = "<group>"; };
 		20A234A717DDCFD900EDC65D /* SessionDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDay.h; sourceTree = "<group>"; };
 		20A234A817DDCFD900EDC65D /* SessionDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDay.m; sourceTree = "<group>"; };
 		20A234AA17DDD0E000EDC65D /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
@@ -180,6 +185,8 @@
 				20A234AB17DDD0E000EDC65D /* Session.m */,
 				20A234AD17DDD1C200EDC65D /* Track.h */,
 				20A234AE17DDD1C200EDC65D /* Track.m */,
+				2086118417F2789700B82F25 /* News.h */,
+				2086118517F2789700B82F25 /* News.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +305,7 @@
 				B1D19B5917DCCC300072F1A8 /* NewsViewController.h */,
 				B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */,
 				B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */,
+				2086118717F286D700B82F25 /* NewsViewController568.xib */,
 				20CC1DC017E4357D00576014 /* SessionDetailViewController.h */,
 				20CC1DC117E4357D00576014 /* SessionDetailViewController.m */,
 				20CC1DC517E4373A00576014 /* SessionDetailViewController.xib */,
@@ -457,6 +465,7 @@
 				20FFB71617F022B20017CC72 /* 6.png in Resources */,
 				20FFB71417F022B20017CC72 /* 4.png in Resources */,
 				20CC1DCC17E45E9E00576014 /* SessionViewCell.xib in Resources */,
+				2086118817F286D700B82F25 /* NewsViewController568.xib in Resources */,
 				20FFB71B17F022B20017CC72 /* arrow_left.png in Resources */,
 				20CC1DCF17E461A600576014 /* SShadow.png in Resources */,
 			);
@@ -483,6 +492,7 @@
 				B1D19B8017DCCD400072F1A8 /* CJSONSerializedData.m in Sources */,
 				B1D19B8117DCCD400072F1A8 /* CDataScanner_Extensions.m in Sources */,
 				B1D19B8217DCCD400072F1A8 /* NSDictionary_JSONExtensions.m in Sources */,
+				2086118617F2789700B82F25 /* News.m in Sources */,
 				B1D19B8317DCCD400072F1A8 /* CJSONDeserializer.m in Sources */,
 				B1D19B8417DCCD400072F1A8 /* CJSONScanner.m in Sources */,
 				B1D19B8517DCCD400072F1A8 /* CJSONSerializer.m in Sources */,
