@@ -31,22 +31,37 @@
 }
 
 - (void)initImageView {
-  self.imageView = [[UIImageView alloc]init];
+  self.imageView = [[UIImageView alloc] init];
 
   // The imageView can be zoomed largest size
-  self.imageView.frame = CGRectMake(0, 0, ScreenWidth * 2.5, ScreenHeight * 2.5);
+
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    self.imageView.frame = CGRectMake(0, 0, ScreenWidth * 3.5, (ScreenHeight - 22) * 1.7);
+  } else {
+    self.imageView.frame = CGRectMake(0, 0, ScreenWidth * 3.5, (ScreenHeight - 22) * 2.0);
+  }
+  
+  
   self.imageView.userInteractionEnabled = YES;
   [self addSubview:self.imageView];
 
   // Add gesture,double tap zoom imageView.
-  UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-      action:@selector(handleDoubleTap:)];
+  UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
   [doubleTapGesture setNumberOfTapsRequired:2];
   [self.imageView addGestureRecognizer:doubleTapGesture];
 
   float minimumScale = self.frame.size.width / self.imageView.frame.size.width;
   [self setMinimumZoomScale:minimumScale];
   [self setZoomScale:minimumScale];
+  
+  
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    [self setZoomScale:1.7];
+    [self scrollRectToVisible:CGRectMake(388, 200, 320, 568) animated:NO];
+  } else {
+    [self setZoomScale:2.0];
+    [self scrollRectToVisible:CGRectMake(388, 200, 320, 640) animated:NO];
+  }
 }
 
 #pragma mark - Zoom methods

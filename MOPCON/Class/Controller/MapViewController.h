@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZoomScrollView.h"
 
 @interface MapViewController : UIViewController
+
+@property (nonatomic, strong) ZoomScrollView *scrollView;
 
 @end

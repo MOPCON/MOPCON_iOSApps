@@ -27,7 +27,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view from its nib.
+  
+  self.scrollView = [[ZoomScrollView alloc] initWithFrame:self.view.frame];
+  [self.scrollView.imageView setImage:[UIImage imageNamed:@"map.png"]];
+  [self.view addSubview:self.scrollView];
 }
 
 - (void)didReceiveMemoryWarning {
