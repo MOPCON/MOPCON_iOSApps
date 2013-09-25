@@ -30,8 +30,8 @@
     NSString *aKeyword = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"keyword"]];
     NSString *aLoc = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"loc"]];
     NSString *aCatalog = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"catalog"]];
-    NSString *aStartTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"start_time"]];
-    NSString *aEndTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"end_time"]];
+    //NSString *aStartTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"start_time"]];
+    //NSString *aEndTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"end_time"]];
     
     NSString *sDay = [aId substringWithRange:NSMakeRange(0, 1)];
     int sessionId = [[aId substringWithRange:NSMakeRange(1, 1)] intValue];
