@@ -11,6 +11,7 @@
 #import "URLConnection.h"
 #import "Utility.h"
 #import "News.h"
+#import "NewsDetailViewController.h"
 
 @interface NewsViewController ()
 
@@ -73,13 +74,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   [tableView deselectRowAtIndexPath:indexPath animated:YES];
   
-//  SessionDetailViewController *detailViewController;
-//  if ([[UIScreen mainScreen] bounds].size.height == 568) {
-//    detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController568" bundle:nil];
-//  } else {
-//    detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
-//  }
+  NewsDetailViewController *detailViewController;
+  if ([[UIScreen mainScreen] bounds].size.height == 568) {
+    detailViewController = [[NewsDetailViewController alloc] initWithNibName:@"NewsDetailViewController568" bundle:nil];
+  } else {
+    detailViewController = [[NewsDetailViewController alloc] initWithNibName:@"NewsDetailViewController" bundle:nil];
+  }
   
+  News *news = [self.newsArray objectAtIndex:indexPath.row];
+  [detailViewController setNews:news];
+  [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
 #pragma mark - private

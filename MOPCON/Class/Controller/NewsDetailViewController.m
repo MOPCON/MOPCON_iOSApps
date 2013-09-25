@@ -1,18 +1,18 @@
 //
-//  SessionDetailViewController.m
+//  NewsDetailViewController.m
 //  MOPCON
 //
-//  Created by Evan Wu on 13/9/14.
+//  Created by Evan Wu on 13/9/25.
 //  Copyright (c) 2013年 MOPCON. All rights reserved.
 //
 
-#import "SessionDetailViewController.h"
+#import "NewsDetailViewController.h"
 
-@interface SessionDetailViewController ()
+@interface NewsDetailViewController ()
 
 @end
 
-@implementation SessionDetailViewController
+@implementation NewsDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
   if ([[UIScreen mainScreen] bounds].size.height == 568) {
     [self.tableView setRowHeight:520.0f];
   } else {
@@ -55,10 +56,8 @@
     cell = [[[NSBundle mainBundle] loadNibNamed:@"SessionDetailViewCell" owner:nil options:nil] lastObject];
   }
   
-  [(UILabel *)[cell viewWithTag:101] setText:self.track.name];
-  [(UILabel *)[cell viewWithTag:102] setText:self.track.speaker];
-  NSString *content = [NSString stringWithFormat:@"%@\r\n\r\n%@", self.track.content, self.track.speaker_bio];
-  [(UILabel *)[cell viewWithTag:103] setText:content];
+  [(UILabel *)[cell viewWithTag:101] setText:self.news.title];
+  [(UILabel *)[cell viewWithTag:103] setText:self.news.content];
   
   return cell;
 }
@@ -74,4 +73,5 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
 }
+
 @end

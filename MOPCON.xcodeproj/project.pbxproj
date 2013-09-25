@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2086118617F2789700B82F25 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 2086118517F2789700B82F25 /* News.m */; };
 		2086118817F286D700B82F25 /* NewsViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2086118717F286D700B82F25 /* NewsViewController568.xib */; };
+		2086118C17F289F100B82F25 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2086118A17F289F100B82F25 /* NewsDetailViewController.m */; };
+		2086118D17F289F100B82F25 /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2086118B17F289F100B82F25 /* NewsDetailViewController.xib */; };
+		2086118F17F28E8900B82F25 /* NewsDetailViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2086118E17F28E8900B82F25 /* NewsDetailViewController568.xib */; };
 		20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234A817DDCFD900EDC65D /* SessionDay.m */; };
 		20A234AC17DDD0E000EDC65D /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AB17DDD0E000EDC65D /* Session.m */; };
 		20A234AF17DDD1C200EDC65D /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A234AE17DDD1C200EDC65D /* Track.m */; };
@@ -74,6 +77,10 @@
 		2086118417F2789700B82F25 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		2086118517F2789700B82F25 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		2086118717F286D700B82F25 /* NewsViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController568.xib; sourceTree = "<group>"; };
+		2086118917F289F100B82F25 /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		2086118A17F289F100B82F25 /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		2086118B17F289F100B82F25 /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		2086118E17F28E8900B82F25 /* NewsDetailViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController568.xib; sourceTree = "<group>"; };
 		20A234A717DDCFD900EDC65D /* SessionDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDay.h; sourceTree = "<group>"; };
 		20A234A817DDCFD900EDC65D /* SessionDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDay.m; sourceTree = "<group>"; };
 		20A234AA17DDD0E000EDC65D /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
@@ -302,6 +309,10 @@
 				B1D19B5E17DCCC4B0072F1A8 /* MapViewController.h */,
 				B1D19B5F17DCCC4B0072F1A8 /* MapViewController.m */,
 				B1D19B6017DCCC4B0072F1A8 /* MapViewController.xib */,
+				2086118917F289F100B82F25 /* NewsDetailViewController.h */,
+				2086118A17F289F100B82F25 /* NewsDetailViewController.m */,
+				2086118B17F289F100B82F25 /* NewsDetailViewController.xib */,
+				2086118E17F28E8900B82F25 /* NewsDetailViewController568.xib */,
 				B1D19B5917DCCC300072F1A8 /* NewsViewController.h */,
 				B1D19B5A17DCCC300072F1A8 /* NewsViewController.m */,
 				B1D19B5B17DCCC300072F1A8 /* NewsViewController.xib */,
@@ -438,6 +449,7 @@
 				20FFB71917F022B20017CC72 /* 9.png in Resources */,
 				20FFB71717F022B20017CC72 /* 7.png in Resources */,
 				20FFB71517F022B20017CC72 /* 5.png in Resources */,
+				2086118F17F28E8900B82F25 /* NewsDetailViewController568.xib in Resources */,
 				20FFB71317F022B20017CC72 /* 3.png in Resources */,
 				20FFB71117F022B20017CC72 /* 1.png in Resources */,
 				20FFB71A17F022B20017CC72 /* 10.png in Resources */,
@@ -453,6 +465,7 @@
 				20FFB71F17F022B20017CC72 /* news_gray@2x.png in Resources */,
 				B17348F217DCCAF6009EF3F1 /* SessionViewController.xib in Resources */,
 				B1D19B5D17DCCC300072F1A8 /* NewsViewController.xib in Resources */,
+				2086118D17F289F100B82F25 /* NewsDetailViewController.xib in Resources */,
 				B1D19B6217DCCC4B0072F1A8 /* MapViewController.xib in Resources */,
 				20FFB71817F022B20017CC72 /* 8.png in Resources */,
 				20FFB71D17F022B20017CC72 /* event_gray@2x.png in Resources */,
@@ -499,6 +512,7 @@
 				20A8425617DDA78700F0C49F /* Utility.m in Sources */,
 				20A234A917DDCFD900EDC65D /* SessionDay.m in Sources */,
 				20A234AC17DDD0E000EDC65D /* Session.m in Sources */,
+				2086118C17F289F100B82F25 /* NewsDetailViewController.m in Sources */,
 				20A234AF17DDD1C200EDC65D /* Track.m in Sources */,
 				20CC1DC317E4357D00576014 /* SessionDetailViewController.m in Sources */,
 				20CC1DD217E4630400576014 /* ShadowView.m in Sources */,

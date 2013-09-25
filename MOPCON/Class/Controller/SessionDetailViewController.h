@@ -11,7 +11,7 @@
 
 @protocol SessionDetailViewControllerDelegate;
 
-@interface SessionDetailViewController : UIViewController
+@interface SessionDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, assign) id<SessionDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) IBOutlet UITableView  *tableView;
