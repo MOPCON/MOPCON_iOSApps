@@ -163,7 +163,7 @@
   [(UILabel *)[cell viewWithTag:101] setText:track.name];
   [(UILabel *)[cell viewWithTag:102] setText:track.loc];
   UIImageView *imageView = (UIImageView *)[cell viewWithTag:103];
-  [imageView setImage:[UIImage imageNamed:@"01.png"]];
+  [imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", track.catalog]]];
   
   return cell;
 }

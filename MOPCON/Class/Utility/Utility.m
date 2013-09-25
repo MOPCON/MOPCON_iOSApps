@@ -28,6 +28,7 @@
     NSString *aSpeaker_bio = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"speaker_bio"]];
     NSString *aKeyword = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"keyword"]];
     NSString *aLoc = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"loc"]];
+    NSString *aCatalog = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"catalog"]];
     NSString *aStartTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"start_time"]];
     NSString *aEndTime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"end_time"]];
     
@@ -43,6 +44,7 @@
     [track setSpeaker_bio:aSpeaker_bio];
     [track setKeyword:aKeyword];
     [track setLoc:aLoc];
+    [track setCatalog:aCatalog];
     [track setStartTime:nil];
     [track setEndTime:nil];
     
@@ -100,7 +102,7 @@
     NSDictionary *dict = session.trackDictionary;
     NSLog(@"%@", dict);
     
-    Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
+    //Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
     //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     //[dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
     //NSLog(@"%@", [dateFormatter stringFromDate:a.time]);
@@ -121,6 +123,7 @@
         NSLog(@"%@", tt.speaker);
         NSLog(@"%@", tt.speaker_bio);
         NSLog(@"%@", tt.loc);
+        NSLog(@"%@", tt.catalog);
       }
     }
   }

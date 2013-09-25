@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *speaker_bio;
 @property (nonatomic, strong) NSString *keyword;
 @property (nonatomic, strong) NSString *loc;
+@property (nonatomic, strong) NSString *catalog;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;
 
