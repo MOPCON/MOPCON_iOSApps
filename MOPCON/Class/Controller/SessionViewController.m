@@ -36,6 +36,10 @@
   return self;
 }
 
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
@@ -55,11 +59,14 @@
   [self.navigationItem.leftBarButtonItem setEnabled:NO];
   
   [self.tableView setRowHeight:54];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSessionJson) name:@"UpdateSession" object:nil];
+  [self updateSessionJson];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  [self updateSessionJson];
+  //[self updateSessionJson];
 }
 
 - (void)didReceiveMemoryWarning {

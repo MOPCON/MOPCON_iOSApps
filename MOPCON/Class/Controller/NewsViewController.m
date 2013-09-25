@@ -32,12 +32,12 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view from its nib.
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNewsJson) name:@"UpdateNews" object:nil];
+  [self performSelector:@selector(updateNewsJson) withObject:nil afterDelay:12.0f];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  [self updateNewsJson];
 }
 
 - (void)didReceiveMemoryWarning {
