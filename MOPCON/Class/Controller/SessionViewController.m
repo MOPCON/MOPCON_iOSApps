@@ -77,7 +77,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return (self.sessionDay) ? 4 : 0;
+  return (self.sessionDay) ? 8 : 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -85,42 +85,10 @@
     return 0;
   }
   
-  NSString *sessionId;
-  switch (section) {
-    case 0:
-      sessionId = Session0;
-      break;
-    case 1:
-      sessionId = Session1;
-      break;
-    case 2:
-      sessionId = Session2;
-      break;
-    case 3:
-      sessionId = Session3;
-      break;
-    default:
-      break;
-  }
+  NSString *sessionId = [self getSessionIdInSection:section];
 
   Session *session = [self.sessionDay.sessionDictionary objectForKey:sessionId];
   return session.trackDictionary.count;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-  switch (section) {
-    case 0:
-      return @"上午9:00";
-    case 1:
-      return @"上午10:20";
-    case 2:
-      return @"下午13:30";
-    case 3:
-      return @"下午15:10";
-    default:
-      break;
-  }
-  return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -131,24 +99,9 @@
     //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     cell = [[[NSBundle mainBundle] loadNibNamed:@"SessionViewCell" owner:nil options:nil] lastObject];
   }
-
-  NSString *sessionId;
-  switch (indexPath.section) {
-    case 0:
-      sessionId = Session0;
-      break;
-    case 1:
-      sessionId = Session1;
-      break;
-    case 2:
-      sessionId = Session2;
-      break;
-    case 3:
-      sessionId = Session3;
-      break;
-    default:
-      break;
-  }
+  
+  NSString *sessionId = [self getSessionIdInSection:indexPath.section];
+  
   NSString *trackId;
   switch (indexPath.row) {
     case 0:
@@ -187,23 +140,8 @@
     detailViewController = [[SessionDetailViewController alloc] initWithNibName:@"SessionDetailViewController" bundle:nil];
   }
   
-  NSString *sessionId;
-  switch (indexPath.section) {
-    case 0:
-      sessionId = Session0;
-      break;
-    case 1:
-      sessionId = Session1;
-      break;
-    case 2:
-      sessionId = Session2;
-      break;
-    case 3:
-      sessionId = Session3;
-      break;
-    default:
-      break;
-  }
+  NSString *sessionId = [self getSessionIdInSection:indexPath.section];
+  
   NSString *trackId;
   switch (indexPath.row) {
     case 0:
@@ -237,25 +175,9 @@
   [view addSubview:sView];
   [sView viewAppear];
   
-  NSString *title;
-  switch (section) {
-    case 0:
-      title = @"上午9:00";
-      break;
-    case 1:
-      title = @"上午10:20";
-      break;
-    case 2:
-      title = @"下午13:30";
-      break;
-    case 3:
-      title = @"下午15:10";
-      break;
-    default:
-      break;
-  }
+  NSString *title = [self getSessionTimeStringInSection:section];
   
-  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 100, 17)];
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 2, 200, 17)];
   [label setText:title];
   [label setBackgroundColor:[UIColor clearColor]];
   [view addSubview:label];
@@ -372,6 +294,87 @@
 
     [self.tableView reloadData];
   }];
+}
+
+- (NSString *)getSessionTimeStringInSection:(NSInteger)section {
+  if (isFirstDay) {
+    switch (section) {
+      case 0:
+        return @"上午9:05~9:25";
+      case 1:
+        return @"上午9:25~10:15";
+      case 2:
+        return @"上午10:30~11:10";
+      case 3:
+        return @"上午11:20~12:00";
+      case 4:
+        return @"下午13:10~14:00";
+      case 5:
+        return @"下午14:10~14:50";
+      case 6:
+        return @"下午15:10~15:50";
+      case 7:
+        return @"下午16:00~16:40";
+      default:
+        break;
+    }
+  } else {
+    switch (section) {
+      case 0:
+        return @"上午9:00~9:50";
+      case 1:
+        return @"上午10:00~10:40";
+      case 2:
+        return @"上午10:50~11:30";
+      case 3:
+        return @"上午11:30~12:20";
+      case 4:
+        return @"下午13:30~14:20";
+      case 5:
+        return @"下午14:30~15:10";
+      case 6:
+        return @"下午15:30~16:10";
+      case 7:
+        return @"下午16:20~17:30";
+      default:
+        break;
+    }
+  }
+  return @"";
+}
+
+- (NSString *)getSessionIdInSection:(NSInteger)section {
+  NSString *sessionId;
+  switch (section) {
+    case 0:
+      sessionId = Session0;
+      break;
+    case 1:
+      sessionId = Session1;
+      break;
+    case 2:
+      sessionId = Session2;
+      break;
+    case 3:
+      sessionId = Session3;
+      break;
+    case 4:
+      sessionId = Session4;
+      break;
+    case 5:
+      sessionId = Session5;
+      break;
+    case 6:
+      sessionId = Session6;
+      break;
+    case 7:
+      sessionId = Session7;
+      break;
+    default:
+      sessionId = @"";
+      break;
+  }
+  return sessionId;
 }
 
 @end

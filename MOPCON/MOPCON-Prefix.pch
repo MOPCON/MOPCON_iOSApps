@@ -17,6 +17,10 @@
 #define Session1 @"Session1"
 #define Session2 @"Session2"
 #define Session3 @"Session3"
+#define Session4 @"Session4"
+#define Session5 @"Session5"
+#define Session6 @"Session6"
+#define Session7 @"Session7"
 
 #define Track0   @"Track0"
 #define Track1   @"Track1"

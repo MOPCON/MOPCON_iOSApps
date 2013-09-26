@@ -66,6 +66,15 @@
           case 3:
             session = [sessionDayOne.sessionDictionary objectForKey:Session3];
             break;
+          case 4:
+            session = [sessionDayOne.sessionDictionary objectForKey:Session4];
+            break;
+          case 5:
+            session = [sessionDayOne.sessionDictionary objectForKey:Session5];
+            break;
+          case 6:
+            session = [sessionDayOne.sessionDictionary objectForKey:Session6];
+            break;
           default:
             break;
         }
@@ -84,6 +93,15 @@
             break;
           case 3:
             session = [sessionDayTwo.sessionDictionary objectForKey:Session3];
+            break;
+          case 4:
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session4];
+            break;
+          case 5:
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session5];
+            break;
+          case 6:
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session6];
             break;
           default:
             break;
