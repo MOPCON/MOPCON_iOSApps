@@ -49,8 +49,6 @@
 		B17348BA17DCCA29009EF3F1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17348B917DCCA29009EF3F1 /* CoreGraphics.framework */; };
 		B17348C017DCCA29009EF3F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B17348BE17DCCA29009EF3F1 /* InfoPlist.strings */; };
 		B17348C217DCCA29009EF3F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B17348C117DCCA29009EF3F1 /* main.m */; };
-		B17348C817DCCA29009EF3F1 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348C717DCCA29009EF3F1 /* Default.png */; };
-		B17348CA17DCCA29009EF3F1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348C917DCCA29009EF3F1 /* Default@2x.png */; };
 		B17348CC17DCCA29009EF3F1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348CB17DCCA29009EF3F1 /* Default-568h@2x.png */; };
 		B17348D117DCCA29009EF3F1 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348D017DCCA29009EF3F1 /* first.png */; };
 		B17348D317DCCA29009EF3F1 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B17348D217DCCA29009EF3F1 /* first@2x.png */; };
@@ -74,6 +72,14 @@
 		B1D19B8317DCCD400072F1A8 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D19B7617DCCD400072F1A8 /* CJSONDeserializer.m */; };
 		B1D19B8417DCCD400072F1A8 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D19B7817DCCD400072F1A8 /* CJSONScanner.m */; };
 		B1D19B8517DCCD400072F1A8 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B1D19B7A17DCCD400072F1A8 /* CJSONSerializer.m */; };
+		B1D780E317F9B8A900D484A7 /* event_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D780E017F9B8A900D484A7 /* event_black@2x.png */; };
+		B1D780E417F9B8A900D484A7 /* maps_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D780E117F9B8A900D484A7 /* maps_black@2x.png */; };
+		B1D780E517F9B8A900D484A7 /* news_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D780E217F9B8A900D484A7 /* news_black@2x.png */; };
+		B1DEC5A117F9B66A00471F0C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DEC59C17F9B66A00471F0C /* Default.png */; };
+		B1DEC5A217F9B66A00471F0C /* Default-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DEC59D17F9B66A00471F0C /* Default-568@2x.png */; };
+		B1DEC5A317F9B66A00471F0C /* iOS_iCon58X58.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DEC59E17F9B66A00471F0C /* iOS_iCon58X58.png */; };
+		B1DEC5A417F9B66A00471F0C /* iOS_iCon80X80.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DEC59F17F9B66A00471F0C /* iOS_iCon80X80.png */; };
+		B1DEC5A517F9B66A00471F0C /* iOS_iCon120X120.png in Resources */ = {isa = PBXBuildFile; fileRef = B1DEC5A017F9B66A00471F0C /* iOS_iCon120X120.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,8 +138,6 @@
 		B17348BF17DCCA29009EF3F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B17348C117DCCA29009EF3F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B17348C317DCCA29009EF3F1 /* MOPCON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOPCON-Prefix.pch"; sourceTree = "<group>"; };
-		B17348C717DCCA29009EF3F1 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		B17348C917DCCA29009EF3F1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B17348CB17DCCA29009EF3F1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B17348D017DCCA29009EF3F1 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		B17348D217DCCA29009EF3F1 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
@@ -173,6 +177,14 @@
 		B1D19B7917DCCD400072F1A8 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		B1D19B7A17DCCD400072F1A8 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		B1D19B7B17DCCD400072F1A8 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		B1D780E017F9B8A900D484A7 /* event_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "event_black@2x.png"; sourceTree = "<group>"; };
+		B1D780E117F9B8A900D484A7 /* maps_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maps_black@2x.png"; sourceTree = "<group>"; };
+		B1D780E217F9B8A900D484A7 /* news_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_black@2x.png"; sourceTree = "<group>"; };
+		B1DEC59C17F9B66A00471F0C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B1DEC59D17F9B66A00471F0C /* Default-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568@2x.png"; sourceTree = "<group>"; };
+		B1DEC59E17F9B66A00471F0C /* iOS_iCon58X58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOS_iCon58X58.png; sourceTree = "<group>"; };
+		B1DEC59F17F9B66A00471F0C /* iOS_iCon80X80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOS_iCon80X80.png; sourceTree = "<group>"; };
+		B1DEC5A017F9B66A00471F0C /* iOS_iCon120X120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iOS_iCon120X120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +231,14 @@
 		20CC1DCD17E461A500576014 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B1D780E017F9B8A900D484A7 /* event_black@2x.png */,
+				B1D780E117F9B8A900D484A7 /* maps_black@2x.png */,
+				B1D780E217F9B8A900D484A7 /* news_black@2x.png */,
+				B1DEC59C17F9B66A00471F0C /* Default.png */,
+				B1DEC59D17F9B66A00471F0C /* Default-568@2x.png */,
+				B1DEC59E17F9B66A00471F0C /* iOS_iCon58X58.png */,
+				B1DEC59F17F9B66A00471F0C /* iOS_iCon80X80.png */,
+				B1DEC5A017F9B66A00471F0C /* iOS_iCon120X120.png */,
 				2086119017F294D000B82F25 /* map.png */,
 				20FFB70217F022B20017CC72 /* 1.png */,
 				20FFB70317F022B20017CC72 /* 2.png */,
@@ -292,8 +312,6 @@
 				B17348BE17DCCA29009EF3F1 /* InfoPlist.strings */,
 				B17348C117DCCA29009EF3F1 /* main.m */,
 				B17348C317DCCA29009EF3F1 /* MOPCON-Prefix.pch */,
-				B17348C717DCCA29009EF3F1 /* Default.png */,
-				B17348C917DCCA29009EF3F1 /* Default@2x.png */,
 				B17348CB17DCCA29009EF3F1 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
@@ -458,18 +476,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				2086119117F294D000B82F25 /* map.png in Resources */,
+				B1DEC5A317F9B66A00471F0C /* iOS_iCon58X58.png in Resources */,
 				20FFB71917F022B20017CC72 /* 9.png in Resources */,
+				B1DEC5A517F9B66A00471F0C /* iOS_iCon120X120.png in Resources */,
 				20FFB71717F022B20017CC72 /* 7.png in Resources */,
 				2086119317F29CCA00B82F25 /* MapViewController568.xib in Resources */,
 				20FFB71517F022B20017CC72 /* 5.png in Resources */,
 				2086118F17F28E8900B82F25 /* NewsDetailViewController568.xib in Resources */,
 				20FFB71317F022B20017CC72 /* 3.png in Resources */,
 				20FFB71117F022B20017CC72 /* 1.png in Resources */,
+				B1D780E417F9B8A900D484A7 /* maps_black@2x.png in Resources */,
+				B1DEC5A417F9B66A00471F0C /* iOS_iCon80X80.png in Resources */,
+				B1D780E317F9B8A900D484A7 /* event_black@2x.png in Resources */,
 				20FFB71A17F022B20017CC72 /* 10.png in Resources */,
 				B17348C017DCCA29009EF3F1 /* InfoPlist.strings in Resources */,
 				20FFB71C17F022B20017CC72 /* arrow_right.png in Resources */,
-				B17348C817DCCA29009EF3F1 /* Default.png in Resources */,
-				B17348CA17DCCA29009EF3F1 /* Default@2x.png in Resources */,
+				B1DEC5A117F9B66A00471F0C /* Default.png in Resources */,
 				B17348CC17DCCA29009EF3F1 /* Default-568h@2x.png in Resources */,
 				B17348D117DCCA29009EF3F1 /* first.png in Resources */,
 				B17348D317DCCA29009EF3F1 /* first@2x.png in Resources */,
@@ -483,9 +505,11 @@
 				20FFB71817F022B20017CC72 /* 8.png in Resources */,
 				20FFB71D17F022B20017CC72 /* event_gray@2x.png in Resources */,
 				20A8424E17DD9E4A00F0C49F /* SessionViewController568.xib in Resources */,
+				B1D780E517F9B8A900D484A7 /* news_black@2x.png in Resources */,
 				20FFB71217F022B20017CC72 /* 2.png in Resources */,
 				20CC1DC417E4357D00576014 /* SessionDetailViewController568.xib in Resources */,
 				20CC1DC617E4373A00576014 /* SessionDetailViewController.xib in Resources */,
+				B1DEC5A217F9B66A00471F0C /* Default-568@2x.png in Resources */,
 				20FFB71E17F022B20017CC72 /* maps_gray@2x.png in Resources */,
 				20CC1DC817E438AF00576014 /* SessionDetailViewCell.xib in Resources */,
 				20FFB71617F022B20017CC72 /* 6.png in Resources */,

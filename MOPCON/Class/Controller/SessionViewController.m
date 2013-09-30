@@ -29,7 +29,7 @@
   if (self) {
     self.title = NSLocalizedString(@"Session", @"Session");
     self.navigationItem.title = @"10月26日星期六";
-    self.tabBarItem.image = [UIImage imageNamed:@"event_gray.png"];
+    self.tabBarItem.image = [UIImage imageNamed:@"event_black.png"];
     isFirstDay = YES;
   }
 
