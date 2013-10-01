@@ -117,12 +117,10 @@
       default:
         break;
     }
-    //[session.trackDictionary setObject:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
-    //[session.trackDictionary setValue:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
     NSString *trackS = [NSString stringWithFormat:@"Track%d", trackId];
     [session.trackDictionary setValue:track forKey:trackS];
     
-    
+    /*
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
     //NSLog(@"%@", [dateFormatter stringFromDate:session.time]);
@@ -153,6 +151,7 @@
         NSLog(@"%@", tt.catalog);
       }
     }
+    */
   }
   
   return @[sessionDayOne, sessionDayTwo];
@@ -176,12 +175,14 @@
     [newsArray addObject:news];
   }
   
+  /*
   for (int i = 0; i < newsArray.count; i++) {
     News *news = [newsArray objectAtIndex:i];
     NSLog(@"%@", news.newsId);
     NSLog(@"%@", news.title);
     NSLog(@"%@", news.content);
   }
+  */
   
   return newsArray;
 }

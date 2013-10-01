@@ -58,10 +58,13 @@
   self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.preDayButton];
   [self.navigationItem.leftBarButtonItem setEnabled:NO];
   
-  [self.tableView setRowHeight:54];
+  [self.tableView setRowHeight:64];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateSessionJson) name:@"UpdateSession" object:nil];
-  [self updateSessionJson];
+  [self readSessionFromDocuments];
+  
+  [self performSelector:@selector(updateSessionJson) withObject:nil afterDelay:3.0f];
+  //[self updateSessionJson];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -232,8 +235,8 @@
     NSLog(@"ResponseBody=%@", jsonString);
     
     NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
-    NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
-    NSLog(@"%@", lastupdate);
+    //NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
+    //NSLog(@"%@", lastupdate);
     
     NSString *documentPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -275,25 +278,29 @@
     
     [self.tableView reloadData];
   } errorBlock:^(NSError *error) {
-    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"session.txt"];
-    NSError *errors = nil;
-    NSString *file = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&errors];
-    NSData *fileData = [file dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:fileData error:nil];
-    [self setSessionArray:[Utility sessionParser:aJsonDict]];
-    
-    if (isFirstDay) {
-      self.sessionDay = [self.sessionArray objectAtIndex:0];
-      self.dayLabel.text = @"10月26日星期六";
-      self.navigationItem.title = @"10月26日星期六";
-    } else {
-      self.sessionDay = [self.sessionArray objectAtIndex:1];
-      self.dayLabel.text = @"10月27日星期日";
-      self.navigationItem.title = @"10月27日星期日";
-    }
-
-    [self.tableView reloadData];
+    [self readSessionFromDocuments];
   }];
+}
+
+- (void)readSessionFromDocuments {
+  NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"session.txt"];
+  NSError *errors = nil;
+  NSString *file = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:&errors];
+  NSData *fileData = [file dataUsingEncoding:NSUTF8StringEncoding];
+  NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:fileData error:nil];
+  [self setSessionArray:[Utility sessionParser:aJsonDict]];
+  
+  if (isFirstDay) {
+    self.sessionDay = [self.sessionArray objectAtIndex:0];
+    self.dayLabel.text = @"10月26日星期六";
+    self.navigationItem.title = @"10月26日星期六";
+  } else {
+    self.sessionDay = [self.sessionArray objectAtIndex:1];
+    self.dayLabel.text = @"10月27日星期日";
+    self.navigationItem.title = @"10月27日星期日";
+  }
+  
+  [self.tableView reloadData];
 }
 
 - (NSString *)getSessionTimeStringInSection:(NSInteger)section {

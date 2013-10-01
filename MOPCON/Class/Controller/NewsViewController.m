@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateNewsJson) name:@"UpdateNews" object:nil];
-  [self performSelector:@selector(updateNewsJson) withObject:nil afterDelay:12.0f];
+  [self performSelector:@selector(updateNewsJson) withObject:nil afterDelay:5.0f];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,7 +94,7 @@
   
   [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"ResponseBody=%@", jsonString);
+    //NSLog(@"ResponseBody=%@", jsonString);
     
     NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
     
