@@ -75,6 +75,9 @@
           case 6:
             session = [sessionDayOne.sessionDictionary objectForKey:Session6];
             break;
+          case 7:
+            session = [sessionDayOne.sessionDictionary objectForKey:Session7];
+            break;
           default:
             break;
         }
@@ -103,6 +106,9 @@
           case 6:
             session = [sessionDayTwo.sessionDictionary objectForKey:Session6];
             break;
+          case 7:
+            session = [sessionDayTwo.sessionDictionary objectForKey:Session7];
+            break;
           default:
             break;
         }
@@ -115,9 +121,11 @@
     //[session.trackDictionary setValue:track forKey:[NSString stringWithFormat:@"Track%d", trackId]];
     NSString *trackS = [NSString stringWithFormat:@"Track%d", trackId];
     [session.trackDictionary setValue:track forKey:trackS];
+    
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-    NSLog(@"%@", [dateFormatter stringFromDate:session.time]);
+    //NSLog(@"%@", [dateFormatter stringFromDate:session.time]);
     NSDictionary *dict = session.trackDictionary;
     NSLog(@"%@", dict);
     
@@ -131,7 +139,7 @@
       
       NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
       [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-      NSLog(@"%@", [dateFormatter stringFromDate:ss.time]);
+      //NSLog(@"%@", [dateFormatter stringFromDate:ss.time]);
       
       NSLog(@"%d", ss.trackDictionary.count);
       for (NSString *k in ss.trackDictionary) {
