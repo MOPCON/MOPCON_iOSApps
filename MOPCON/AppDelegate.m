@@ -37,6 +37,7 @@
   self.tabBarController.viewControllers = @[sessionNavi, newsNavi, viewController3];
   self.window.rootViewController = self.tabBarController;
   [self.tabBarController.tabBar setTintColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0]];
+  [self.tabBarController.tabBar setTintColor:[UIColor colorWithRed:0.0 green:0.4352941 blue:1.0 alpha:1.0]];
   [self.window makeKeyAndVisible];
 
   return YES;
