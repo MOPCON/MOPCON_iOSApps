@@ -55,12 +55,6 @@
     cell = [[[NSBundle mainBundle] loadNibNamed:@"SessionDetailViewCell" owner:nil options:nil] lastObject];
   }
   
-  UILabel *nameLabel = (UILabel *)[cell viewWithTag:101];
-  int nameLine = (self.track.name.length / 20) + 1;
-  NSLog(@"==%d", nameLine);
-  [nameLabel setFrame:CGRectMake(nameLabel.frame.origin.x, nameLabel.frame.origin.y, nameLabel.frame.size.width, 21 * nameLine)];
-  [nameLabel setNumberOfLines:nameLine + 1];
-  
   [(UILabel *)[cell viewWithTag:101] setText:self.track.name];
   [(UILabel *)[cell viewWithTag:102] setText:self.track.speaker];
   NSString *content = [NSString stringWithFormat:@"%@\r\n\r\n%@", self.track.content, self.track.speaker_bio];

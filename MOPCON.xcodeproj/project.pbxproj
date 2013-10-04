@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2022C94917FED015002651FE /* SessionDetailViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2022C94817FED015002651FE /* SessionDetailViewCell.m */; };
 		2086118617F2789700B82F25 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 2086118517F2789700B82F25 /* News.m */; };
 		2086118817F286D700B82F25 /* NewsViewController568.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2086118717F286D700B82F25 /* NewsViewController568.xib */; };
 		2086118C17F289F100B82F25 /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2086118A17F289F100B82F25 /* NewsDetailViewController.m */; };
@@ -83,6 +84,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2022C94717FED015002651FE /* SessionDetailViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailViewCell.h; sourceTree = "<group>"; };
+		2022C94817FED015002651FE /* SessionDetailViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailViewCell.m; sourceTree = "<group>"; };
 		2086118417F2789700B82F25 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		2086118517F2789700B82F25 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		2086118717F286D700B82F25 /* NewsViewController568.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController568.xib; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 			children = (
 				20CC1DD017E4630400576014 /* ShadowView.h */,
 				20CC1DD117E4630400576014 /* ShadowView.m */,
+				2022C94717FED015002651FE /* SessionDetailViewCell.h */,
+				2022C94817FED015002651FE /* SessionDetailViewCell.m */,
 				20CC1DC717E438AF00576014 /* SessionDetailViewCell.xib */,
 				20CC1DCB17E45E9E00576014 /* SessionViewCell.xib */,
 			);
@@ -539,6 +544,7 @@
 				B1D19B7D17DCCD400072F1A8 /* CFilteringJSONSerializer.m in Sources */,
 				B1D19B7E17DCCD400072F1A8 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				B1D19B7F17DCCD400072F1A8 /* CJSONSerialization.m in Sources */,
+				2022C94917FED015002651FE /* SessionDetailViewCell.m in Sources */,
 				B1D19B8017DCCD400072F1A8 /* CJSONSerializedData.m in Sources */,
 				B1D19B8117DCCD400072F1A8 /* CDataScanner_Extensions.m in Sources */,
 				B1D19B8217DCCD400072F1A8 /* NSDictionary_JSONExtensions.m in Sources */,
