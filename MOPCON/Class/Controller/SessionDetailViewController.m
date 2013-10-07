@@ -7,6 +7,7 @@
 //
 
 #import "SessionDetailViewController.h"
+#import "SessionDetailViewCell.h"
 
 @interface SessionDetailViewController ()
 
@@ -59,6 +60,9 @@
   [(UILabel *)[cell viewWithTag:102] setText:self.track.speaker];
   NSString *content = [NSString stringWithFormat:@"%@\r\n\r\n%@", self.track.content, self.track.speaker_bio];
   [(UILabel *)[cell viewWithTag:103] setText:content];
+  
+  SessionDetailViewCell *detailCell = (SessionDetailViewCell *)cell;
+  [detailCell setSessionTitle:self.track.name content:self.track.content speaker:self.track.speaker speakerBio:self.track.speaker_bio];
   
   return cell;
 }
