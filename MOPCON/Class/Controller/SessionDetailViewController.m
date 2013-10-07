@@ -78,4 +78,12 @@
    [self.navigationController pushViewController:detailViewController animated:YES];
    */
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+  SessionDetailViewCell *detailCell = [[SessionDetailViewCell alloc] init];
+  [detailCell setSessionTitle:self.track.name content:self.track.content speaker:self.track.speaker speakerBio:self.track.speaker_bio];
+  
+  return detailCell.viewHeight;
+}
+
 @end

@@ -51,11 +51,11 @@
   [label setText:_title];
   int lineNumber = (_title.length / 22) + 1;
 
-  [label setFrame:CGRectMake(20, 0, 280, 22 * lineNumber)];
+  [label setFrame:CGRectMake(20, 10, 280, 22 * lineNumber)];
   [label setNumberOfLines:lineNumber + 1];
   [label setFont:[UIFont boldSystemFontOfSize:17.0f]];
   [self addSubview:label];
-  [label setBackgroundColor:[UIColor redColor]];
+
   [self calculatorContentField:label.frame.origin.y + label.frame.size.height + 10];
 }
 
@@ -71,6 +71,7 @@
   [label setFrame:CGRectMake(20, originY, 280, 20 * lineNumber)];
   [label setNumberOfLines:lineNumber + 1];
   [label setFont:[UIFont systemFontOfSize:16.0f]];
+  [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1.0]];
   [self addSubview:label];
 
   [self calculatorSpeakerField:label.frame.origin.y + label.frame.size.height];
@@ -81,13 +82,13 @@
   [label setText:_speaker];
   int lineNumber = (_speaker.length / 20) + 1;
   
-  [label setFrame:CGRectMake(20, originY, 280, 40 * lineNumber)];
+  [label setFrame:CGRectMake(20, originY, 280, 30 * lineNumber)];
   [label setNumberOfLines:lineNumber + 1];
   [label setFont:[UIFont boldSystemFontOfSize:17.0f]];
   [label setTextColor:[UIColor blueColor]];
 
   [self addSubview:label];
-  
+
   [self calculatorBioField:label.frame.origin.y + label.frame.size.height];
 }
 
@@ -95,19 +96,18 @@
   VerticallyAlignedLabel *label = [[VerticallyAlignedLabel alloc] init];
   label.verticalAlignment = VerticalAlignmentTop;
   [label setText:_spakerBio];
-  int lineNumber = (_spakerBio.length / 18) + 1;
+  int lineNumber = (_spakerBio.length / 20) + 1;
 
   NSArray *breakings = [_content componentsSeparatedByString:@"\n"];
   lineNumber += breakings.count;
   
-  [label setFrame:CGRectMake(20, originY, 280, 21 * lineNumber)];
+  [label setFrame:CGRectMake(20, originY, 280, 20 * lineNumber)];
   [label setNumberOfLines:lineNumber + 1];
   [label setFont:[UIFont systemFontOfSize:16.0f]];
   [label setTextColor:[UIColor colorWithWhite:0.4 alpha:1.0]];
-
-  self.viewHeight = label.frame.origin.y + label.frame.size.height + 5;
-  
   [self addSubview:label];
+  
+  self.viewHeight = label.frame.origin.y + label.frame.size.height + 5;
 }
 
 @end
