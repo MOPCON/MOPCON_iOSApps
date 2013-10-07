@@ -64,12 +64,10 @@
   [self readSessionFromDocuments];
   
   [self performSelector:@selector(updateSessionJson) withObject:nil afterDelay:3.0f];
-  //[self updateSessionJson];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
-  //[self updateSessionJson];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,8 +96,6 @@
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    //cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     cell = [[[NSBundle mainBundle] loadNibNamed:@"SessionViewCell" owner:nil options:nil] lastObject];
   }
   
@@ -232,39 +228,15 @@
   
   [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"ResponseBody=%@", jsonString);
     
     NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
-    //NSString *lastupdate = (NSString *)[aJsonDict objectForKey:@"last_update"];
-    //NSLog(@"%@", lastupdate);
     
     NSString *documentPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSData *jsondata = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-    //[jsondata writeToFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.txt", lastupdate]] atomically:YES];
+
     [jsondata writeToFile:[documentPath stringByAppendingPathComponent:@"session.txt"] atomically:YES];
 
     [self setSessionArray:[Utility sessionParser:aJsonDict]];
-    
-//    NSLog(@"%@, \r\nsession count = %d", self.sessionArray, self.sessionArray.count);
-//    
-//    for (int i = 0; i < self.sessionArray.count; i++) {
-//      SessionDay *d = [self.sessionArray objectAtIndex:i];
-//      for (NSString *key in d.sessionDictionary) {
-//        Session *s = [d.sessionDictionary objectForKey:key];
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//        [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-//        NSLog(@"%@", [dateFormatter stringFromDate:s.time]);
-//        for (NSString *k in s.trackDictionary) {
-//          Track *tt = [s.trackDictionary objectForKey:k];
-//          NSLog(@"%@", tt.trackId);
-//          NSLog(@"%@", tt.name);
-//          NSLog(@"%@", tt.speaker);
-//          NSLog(@"%@", tt.speaker_bio);
-//          NSLog(@"%@", tt.loc);
-//        }
-//      }
-//    }
-    
     
     if (isFirstDay) {
       self.sessionDay = [self.sessionArray objectAtIndex:0];

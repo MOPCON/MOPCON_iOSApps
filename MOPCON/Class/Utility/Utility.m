@@ -119,39 +119,6 @@
     }
     NSString *trackS = [NSString stringWithFormat:@"Track%d", trackId];
     [session.trackDictionary setValue:track forKey:trackS];
-    
-    /*
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-    //NSLog(@"%@", [dateFormatter stringFromDate:session.time]);
-    NSDictionary *dict = session.trackDictionary;
-    NSLog(@"%@", dict);
-    
-    //Session *a = [sessionDayOne.sessionDictionary objectForKey:Session0];
-    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    //[dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-    //NSLog(@"%@", [dateFormatter stringFromDate:a.time]);
-    
-    for (NSString *key in sessionDayOne.sessionDictionary) {
-      Session *ss = [sessionDayOne.sessionDictionary objectForKey:key];
-      
-      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-      [dateFormatter setDateFormat:@"YY-MM-dd HH:mm:ss"];
-      //NSLog(@"%@", [dateFormatter stringFromDate:ss.time]);
-      
-      NSLog(@"%d", ss.trackDictionary.count);
-      for (NSString *k in ss.trackDictionary) {
-        Track *tt = [ss.trackDictionary objectForKey:k];
-        NSLog(@"%@", tt.trackId);
-        NSLog(@"%@", tt.name);
-        NSLog(@"%@", tt.content);
-        NSLog(@"%@", tt.speaker);
-        NSLog(@"%@", tt.speaker_bio);
-        NSLog(@"%@", tt.loc);
-        NSLog(@"%@", tt.catalog);
-      }
-    }
-    */
   }
   
   return @[sessionDayOne, sessionDayTwo];
@@ -166,7 +133,6 @@
     NSString *aId = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"id"]];
     NSString *aTitle = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"title"]];
     NSString *aContent = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"content"]];
-    //NSString *aPubtime = [NSString stringWithFormat:@"%@", (NSString *)[d objectForKey:@"pub_time"]];
     
     News *news = [[News alloc] init];
     [news setNewsId:aId];
@@ -174,15 +140,6 @@
     [news setContent:aContent];
     [newsArray addObject:news];
   }
-  
-  /*
-  for (int i = 0; i < newsArray.count; i++) {
-    News *news = [newsArray objectAtIndex:i];
-    NSLog(@"%@", news.newsId);
-    NSLog(@"%@", news.title);
-    NSLog(@"%@", news.content);
-  }
-  */
   
   return newsArray;
 }

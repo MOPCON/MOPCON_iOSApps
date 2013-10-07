@@ -63,7 +63,6 @@
   }
   
   News *news = [self.newsArray objectAtIndex:indexPath.row];
-  //[(UILabel *)[cell viewWithTag:101] setText:news.title];
   [cell.textLabel setText:news.title];
   
   return cell;
@@ -94,7 +93,6 @@
   
   [URLConnection asyncConnectionWithRequest:request completionBlock:^(NSData *data, NSURLResponse *response) {
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    //NSLog(@"ResponseBody=%@", jsonString);
     
     NSDictionary *aJsonDict = [[CJSONDeserializer deserializer] deserializeAsDictionary:data error:nil];
     
